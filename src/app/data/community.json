@@ -1,0 +1,113 @@
+[
+  {
+    "name": "Julia Mahamid",
+    "title": "Group Leader",
+    "website": "https://www.embl.org/groups/mahamid",
+    "image": "/community/julia_mahamid.jpg",
+    "affiliations": [
+      {
+        "name": "European Molecular Biology Laboratory (EMBL)",
+        "logo": "/community/logos/embl_logo.png",
+        "url": "https://www.embl.org"
+      }
+    ]
+  },
+  {
+    "name": "Linhua Tan",
+    "title": "Staff Scientist",
+    "website": "https://www.embl.org",
+    "image": "/community/linhua_tan.jpg",
+    "affiliations": [
+      {
+        "name": "European Molecular Biology Laboratory (EMBL)",
+        "logo": "/community/logos/embl_logo.png"
+      }
+    ]
+  },
+  {
+    "name": "Jenny Sachweh",
+    "title": "Research Technician",
+    "website": "https://www.embl.org",
+    "image": "/community/jenny_sachweh.jpg",
+    "affiliations": [
+      {
+        "name": "European Molecular Biology Laboratory (EMBL)",
+        "logo": "/community/logos/embl_logo.png"
+      }
+    ]
+  },
+  {
+    "name": "Jürgen Plitzko",
+    "title": "Director",
+    "website": "https://www.biochem.mpg.de/plitzko",
+    "image": "/community/juergen_plitzko.jpg",
+    "affiliations": [
+      {
+        "name": "Max Planck Institute of Biochemistry",
+        "logo": "/community/logos/mpi_biochemistry_logo.png",
+        "url": "https://www.biochem.mpg.de"
+      }
+    ]
+  },
+  {
+    "name": "Johann Brenner",
+    "title": "Research Scientist",
+    "website": "https://www.biochem.mpg.de",
+    "image": "/community/johann_brenner.jpg",
+    "affiliations": [
+      {
+        "name": "Max Planck Institute of Biochemistry",
+        "logo": "/community/logos/mpi_biochemistry_logo.png"
+      }
+    ]
+  },
+  {
+    "name": "Maud Dumoux",
+    "title": "Group Leader",
+    "website": "https://www.rfi.ac.uk/people/maud-dumoux/",
+    "image": "/community/maud_dumoux.jpg",
+    "affiliations": [
+      {
+        "name": "Rosalind Franklin Institute",
+        "logo": "/community/logos/rosalind_franklin_logo.png",
+        "url": "https://www.rfi.ac.uk"
+      }
+    ]
+  },
+  {
+    "name": "Michael Grange",
+    "title": "Research Fellow",
+    "website": "https://www.rfi.ac.uk/people/michael-grange/",
+    "image": "/community/michael_grange.jpg",
+    "affiliations": [
+      {
+        "name": "Rosalind Franklin Institute",
+        "logo": "/community/logos/rosalind_franklin_logo.png"
+      }
+    ]
+  },
+{
+    "name": "John Doe",
+    "title": "Title Optional",
+    "website": "https://example.com",
+    "image": "/community/placeholder_icecube.png",
+    "affiliations": [
+      {
+        "name": "European Molecular Biology Laboratory (EMBL)",
+        "logo": "/community/logos/embl_logo.png",
+        "url": "https://www.embl.org"
+      },
+      {
+        "name": "European Molecular Biology Laboratory (EMBL)",
+        "logo": "/community/logos/embl_logo.png",
+        "url": "https://www.embl.org"
+      },
+      {
+        "name": "European Molecular Biology Laboratory (EMBL)",
+        "logo": "/community/logos/embl_logo.png",
+        "url": "https://www.embl.org"
+      }
+    ]
+  }
+
+]

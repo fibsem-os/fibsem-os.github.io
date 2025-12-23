@@ -5,3 +5,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+:root {
+  --font-ibm-plex: 'IBM Plex Sans', sans-serif;
+}
