@@ -3,8 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-
-// CONTENT - Sven, edit all text here. 
+import { COMMUNITY_MEMBERS, RELATED_PROJECTS } from "./data";
 
 const CONTENT = {
   brand: "fibsemOS",
@@ -78,12 +77,12 @@ const CONTENT = {
 
   contributors: {
     title: "Contributors",
-    subtitle: "The people behind fibsemOS",
+    subtitle: "The core team behind fibsemOS",
     people: [
-      { initials: "S", name: "Sven Klumpe", role: "Core Developer", org: "Vienna Biocenter", location: "Austria" },
-      { initials: "P", name: "Patrick Cleeve", role: "Lead Developer", org: "OpenFIBSEM", location: "Australia" },
-      { initials: "G", name: "Georg Ramm", role: "Contributor", org: "Monash University", location: "Australia" },
-      { initials: "A", name: "Alex de Marco", role: "Contributor", org: "NY Structural Biology Center", location: "USA" },
+      { name: "Sven Klumpe", org: "Vienna Biocenter", location: "Austria" },
+      { name: "Patrick Cleeve", org: "OpenFIBSEM", location: "Australia" },
+      { name: "Georg Ramm", org: "Monash University", location: "Australia" },
+      { name: "Alex de Marco", org: "NY Structural Biology Center", location: "USA" },
     ],
   },
 
@@ -92,18 +91,14 @@ const CONTENT = {
     vendors: ["Thermo Fisher Scientific", "ZEISS", "TESCAN", "Delmic"],
   },
 
-  relatedProjects: {
-    title: "Related Projects",
-    projects: ["OpenFIBSEM", "SerialFIB", "3DCT"],
-  },
-
   partners: {
     title: "Partner Organizations",
     orgs: [
-      { name: "Vienna Biocenter", logo: "/VBC.png" },
-      { name: "IMBA", logo: "/IMBA.png" },
-      { name: "IMP", logo: "/IMP.png" },
-      { name: "Monash University", logo: "/Monash.svg" },
+      { name: "Vienna Biocenter", logo: "/related_orgs/VBC.png" },
+      { name: "IMBA", logo: "/related_orgs/IMBA.png" },
+      { name: "IMP", logo: "/related_orgs/IMP.png" },
+      { name: "Monash University", logo: "/related_orgs/Monash.svg" },
+      { name: "CZ Biohub", logo: "/related_orgs/cz_biohub.png" },
     ],
   },
 
@@ -116,11 +111,7 @@ const CONTENT = {
     },
     copyright: "© 2025 fibsemOS Contributors. Open source under MIT license.",
   },
-};;
-
-// ============================================================================
-// PAGE COMPONENT
-// ============================================================================
+};
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -247,6 +238,48 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Community Section */}
+      <section id="community" className="py-12 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-semibold text-dark-navy text-center mb-2">Community</h2>
+          <p className="text-dark-navy/50 text-center mb-10">Our growing global community of researchers and developers.</p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {COMMUNITY_MEMBERS.map((member) => (
+              <div key={member.name} className="flex flex-col items-center p-6 border border-gray-100 rounded-xl bg-cream/20 hover:shadow-sm transition-shadow">
+                <div className="relative w-24 h-24 mb-4 rounded-full overflow-hidden bg-gray-100 border-2 border-primary-blue/10">
+                  {member.image ? (
+                    <Image src={member.image} alt={member.name} fill className="object-cover" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-2xl text-dark-navy/20 font-bold">
+                      {member.name.charAt(0)}
+                    </div>
+                  )}
+                </div>
+                <a
+                  href={member.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg font-bold text-dark-navy hover:text-primary-blue transition-colors mb-2"
+                >
+                  {member.name}
+                </a>
+                <div className="flex flex-col items-center gap-1">
+                  {member.affiliations.map((aff, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
+                      {aff.logo && (
+                        <Image src={aff.logo} alt="" width={14} height={14} className="grayscale opacity-60" />
+                      )}
+                      <span className="text-xs text-dark-navy/60 font-medium">{aff.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contributors */}
       <section id="contributors" className="py-12 px-4 bg-light-blue/30">
         <div className="max-w-5xl mx-auto">
@@ -261,21 +294,8 @@ export default function Home() {
                 key={c.name}
                 className="bg-white border border-gray-200 rounded-lg p-4 text-center"
               >
-                {/* <div className="w-16 h-16 rounded-full border-2 border-gray-200 flex items-center justify-center mx-auto mb-3 overflow-hidden bg-gray-50">
-                  {c.logo ? (
-                    <Image
-                      src={c.logo}
-                      alt={c.org}
-                      width={64}
-                      height={64}
-                      className="object-contain w-full h-full p-1"
-                    />
-                  ) : (
-                    <span className="text-xl text-dark-navy/40">{c.initials}</span>
-                  )}
-                </div> */}
                 <h3 className="font-medium text-dark-navy">{c.name}</h3>
-                <p className="text-sm text-primary-blue">{c.role}</p>
+                <p className="text-sm text-primary-blue">Contributor</p>
                 <p className="text-xs text-dark-navy/50">{c.org}</p>
                 <p className="text-xs text-dark-navy/30">{c.location}</p>
               </div>
@@ -284,7 +304,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Supported Hardware */}
       {/* Supported Hardware */}
       <section id="hardware" className="py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -305,17 +324,18 @@ export default function Home() {
       {/* Related Projects */}
       <section className="py-12 px-4 bg-light-blue/30">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-semibold mb-6 text-dark-navy">
-            {CONTENT.relatedProjects.title}
-          </h2>
+          <h2 className="text-2xl font-semibold mb-6 text-dark-navy">Related Projects</h2>
           <div className="flex flex-wrap justify-center gap-3">
-            {CONTENT.relatedProjects.projects.map((p) => (
-              <div
-                key={p}
+            {RELATED_PROJECTS.map((p) => (
+              <a
+                key={p.name}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="border border-primary-blue/40 text-primary-blue px-5 py-2 rounded-md hover:bg-primary-blue hover:text-cream transition-colors cursor-pointer"
               >
-                {p}
-              </div>
+                {p.name}
+              </a>
             ))}
           </div>
         </div>
@@ -342,6 +362,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* Footer */}
       <footer className="border-t border-gray-200 py-10 px-4 bg-white">
         <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-8">
