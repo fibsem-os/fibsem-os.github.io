@@ -71,8 +71,8 @@ const CONTENT = {
   partners: {
     title: "Partner Organizations",
     orgs: [
-      { name: "CZ Biohub", logo: "/related_orgs/cz_biohub.png" },
       { name: "Monash University", logo: "/related_orgs/Monash.svg" },
+      { name: "Biohub", logo: "/related_orgs/biohub.webp" },
       { name: "Vienna Biocenter", logo: "/related_orgs/VBC.png" },
       { name: "IMBA", logo: "/related_orgs/IMBA.png" },
       { name: "IMP", logo: "/related_orgs/IMP.png" },
@@ -290,9 +290,6 @@ export default function Home() {
           </div>
 
           <div className="mt-8 text-center">
-            {/* <p className="text-sm text-slate-500 mb-2">
-              The core team actively developing and maintaining fibsemOS
-            </p> */}
             <Link
               href="https://github.com/fibsem-os"
               target="_blank"

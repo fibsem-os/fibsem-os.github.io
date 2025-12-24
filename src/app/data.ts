@@ -17,17 +17,6 @@ export interface Project {
   url: string;
 }
 
-export const COMMUNITY_MEMBERS: CommunityMember[] = [
-  {
-    name: "Sven Klumpe",
-    website: "https://github.com/sklumpe",
-    image: "/community/sven.jpg", // Example path
-    affiliations: [
-      { name: "Vienna Biocenter", logo: "/related_orgs/VBC.png" }
-    ]
-  },
-  // Add more members here
-];
 
 export const RELATED_PROJECTS: Project[] = [
   { name: "fibsemOS", url: "https://github.com/fibsem-os" },
