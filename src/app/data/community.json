@@ -86,28 +86,15 @@
       }
     ]
   },
-{
-    "name": "John Doe",
-    "title": "Title Optional",
+  {
+    "name": "Jane Smith",
     "website": "https://example.com",
     "image": "/community/placeholder_icecube.png",
     "affiliations": [
       {
-        "name": "European Molecular Biology Laboratory (EMBL)",
-        "logo": "/community/logos/embl_logo.png",
-        "url": "https://www.embl.org"
-      },
-      {
-        "name": "European Molecular Biology Laboratory (EMBL)",
-        "logo": "/community/logos/embl_logo.png",
-        "url": "https://www.embl.org"
-      },
-      {
-        "name": "European Molecular Biology Laboratory (EMBL)",
-        "logo": "/community/logos/embl_logo.png",
-        "url": "https://www.embl.org"
+        "name": "Rosalind Franklin Institute",
+        "logo": "/community/logos/rosalind_franklin_logo.png"
       }
     ]
   }
-
 ]
