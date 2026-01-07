@@ -5,8 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { RELATED_PROJECTS } from "@/app/data";
 import { CORE_CONTRIBUTORS } from "@/app/data/index";
-import CoreContributorCard from "./CoreContributorCard";
-import CommunityMemberCard from "./CommunityMemberCard";
+import CommunityCard from "./CommunityCard";
 import communityMembers from "@/app/data/community.json";
 
 const CONTENT = {
@@ -116,6 +115,19 @@ const DeepwikiIcon = () => (
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Combine core contributors and community members
+  const allCommunityMembers = [
+    ...CORE_CONTRIBUTORS.map(contributor => ({
+      name: contributor.name,
+      title: contributor.title,
+      org: contributor.org,
+      location: contributor.location,
+      image: contributor.image,
+      website: contributor.website,
+    })),
+    ...communityMembers
+  ];
 
   return (
     <main className="min-h-screen bg-cream text-dark-navy">
@@ -276,16 +288,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Core Contributors Section */}
-      <section id="contributors" className="py-10 px-4">
+      {/* Unified Community Section */}
+      <section id="community" className="py-10 px-4">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl font-semibold text-dark-navy mb-8 font-[family-name:var(--font-ibm-plex)]">
-            Individual Contributors
+            Community
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {CORE_CONTRIBUTORS.map((contributor) => (
-              <CoreContributorCard key={contributor.name} contributor={contributor} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {allCommunityMembers.map((member, index) => (
+              <CommunityCard key={index} {...member} />
             ))}
           </div>
 
@@ -294,30 +306,6 @@ export default function Home() {
               href="https://github.com/fibsem-os"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-sm text-primary-blue hover:text-dark-navy font-medium font-[family-name:var(--font-ibm-plex)]"
-            >
-              Contribute on GitHub →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Community & Adopters Section */}
-      <section id="community" className="py-10 px-4 bg-slate-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-semibold text-dark-navy mb-8 font-[family-name:var(--font-ibm-plex)]">
-            Community
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {communityMembers.map((member, index) => (
-              <CommunityMemberCard key={index} member={member} />
-            ))}
-          </div>
-
-          <div className="mt-8 text-center">
-            <Link
-              href="#contact"
               className="inline-block text-sm text-primary-blue hover:text-dark-navy font-medium font-[family-name:var(--font-ibm-plex)]"
             >
               Get involved →
