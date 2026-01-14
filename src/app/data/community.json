@@ -1,7 +1,6 @@
 [
   {
     "name": "Julia Mahamid",
-    "title": "Group Leader",
     "website": "https://www.embl.org/groups/mahamid",
     "image": "/community/julia_mahamid.jpg",
     "affiliations": [
@@ -14,7 +13,6 @@
   },
   {
     "name": "Linhua Tan",
-    "title": "Staff Scientist",
     "website": "https://www.embl.org",
     "image": "/community/linhua_tan.jpg",
     "affiliations": [
@@ -26,7 +24,6 @@
   },
   {
     "name": "Jenny Sachweh",
-    "title": "Research Technician",
     "website": "https://www.embl.org",
     "image": "/community/jenny_sachweh.jpg",
     "affiliations": [
@@ -38,7 +35,6 @@
   },
   {
     "name": "Jürgen Plitzko",
-    "title": "Director",
     "website": "https://www.biochem.mpg.de/plitzko",
     "image": "/community/juergen_plitzko.jpg",
     "affiliations": [
@@ -51,7 +47,6 @@
   },
   {
     "name": "Johann Brenner",
-    "title": "Research Scientist",
     "website": "https://www.biochem.mpg.de",
     "image": "/community/johann_brenner.jpg",
     "affiliations": [
@@ -63,7 +58,6 @@
   },
   {
     "name": "Maud Dumoux",
-    "title": "Group Leader",
     "website": "https://www.rfi.ac.uk/people/maud-dumoux/",
     "image": "/community/maud_dumoux.jpg",
     "affiliations": [
@@ -76,7 +70,6 @@
   },
   {
     "name": "Michael Grange",
-    "title": "Research Fellow",
     "website": "https://www.rfi.ac.uk/people/michael-grange/",
     "image": "/community/michael_grange.jpg",
     "affiliations": [
