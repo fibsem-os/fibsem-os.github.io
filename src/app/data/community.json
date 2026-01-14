@@ -69,7 +69,7 @@
     "affiliations": [
       {
         "name": "Rosalind Franklin Institute",
-        "logo": "/community/logos/rosalind_franklin_logo.png",
+        "logo": "/community/logos/rosalind_franklin_logo.svg",
         "url": "https://www.rfi.ac.uk"
       }
     ]
@@ -82,19 +82,100 @@
     "affiliations": [
       {
         "name": "Rosalind Franklin Institute",
-        "logo": "/community/logos/rosalind_franklin_logo.png"
+        "logo": "/community/logos/rosalind_franklin_logo.svg"
+      }
+    ]
+  },
+    {
+    "name": "Casper Berger",
+    "image": "/community/placeholder_icecube.jpg",
+    "affiliations": [
+      {
+        "name": "Rosalind Franklin Institute",
+        "logo": "/community/logos/rosalind_franklin_logo.svg"
+      }
+    ]
+  },
+    {
+    "name": "Thomas Fish",
+    "image": "/community/placeholder_icecube.jpg",
+    "affiliations": [
+      {
+        "name": "Rosalind Franklin Institute",
+        "logo": "/community/logos/rosalind_franklin_logo.svg"
       }
     ]
   },
   {
-    "name": "Jane Smith",
-    "website": "https://example.com",
+    "name": "Rohit Kannachel",
+    "website": "https://nysbc.org/",
     "image": "/community/placeholder_icecube.png",
     "affiliations": [
       {
-        "name": "Rosalind Franklin Institute",
-        "logo": "/community/logos/rosalind_franklin_logo.png"
+        "name": "NY Structural Biology Center",
+        "logo": "/community/logos/nysbc_logo.png"
       }
     ]
   }
+  ,
+  {
+    "name": "Bridget Carragher",
+    "website": "https://biohub.org/",
+    "image": "/community/placeholder_icecube.png",
+    "affiliations": [
+      {
+        "name": "Biohub",
+        "logo": "/community/logos/biohub.webp"
+      }
+    ]
+  }
+  ,
+    {
+    "name": "Garrett Greenan",
+    "website": "https://biohub.org/",
+    "image": "/community/placeholder_icecube.png",
+    "affiliations": [
+      {
+        "name": "Biohub",
+        "logo": "/community/logos/biohub.webp"
+      }
+    ]
+  }
+  ,
+    {
+    "name": "Davis Perez",
+    "website": "https://biohub.org/",
+    "image": "/community/placeholder_icecube.png",
+    "affiliations": [
+      {
+        "name": "Biohub",
+        "logo": "/community/logos/biohub.webp"
+      }
+    ]
+  }
+  ,
+    {
+    "name": "Julia Peukes",
+    "website": "https://biohub.org/",
+    "image": "/community/placeholder_icecube.png",
+    "affiliations": [
+      {
+        "name": "Biohub",
+        "logo": "/community/logos/biohub.webp"
+      }
+    ]
+  }
+  ,
+    {
+    "name": "Sophia Betzler",
+    "website": "https://biohub.org/",
+    "image": "/community/placeholder_icecube.png",
+    "affiliations": [
+      {
+        "name": "Biohub",
+        "logo": "/community/logos/biohub.webp"
+      }
+    ]
+  } 
+
 ]
