@@ -15,7 +15,7 @@ export const CORE_CONTRIBUTORS: CoreContributor[] = [
     // title: "Project Lead",
     org: "Vienna Biocenter",
     location: "Austria",
-    website: "https://github.com/sklumpe",
+    website: "https://www.imp.ac.at/groups/sven-klumpe",
     image: "/contributors/sven_klumpe.jpg",
   },
   {
