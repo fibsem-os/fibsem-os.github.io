@@ -12,8 +12,8 @@ const CONTENT = {
   brand: "fibsemOS",
   logo: "/prelim_FibsemOS_square.png",
 
-  //nav: ["Documentation", "Downloads", "Hardware", "Publications", "License"],
-  nav: ["Hardware", "Publications", "License"],
+  nav: ["Documentation", "Downloads", "Hardware", "Publications", "License"],
+  //nav: ["Hardware", "Publications", "License"],
 
   socials: {
     github: "https://github.com/fibsem-os",
