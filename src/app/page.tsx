@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { RELATED_PROJECTS } from "@/app/data";
-import { CORE_CONTRIBUTORS } from "@/app/data/index";
 import CommunityCard from "./CommunityCard";
 import communityMembers from "@/app/data/community.json";
 
@@ -177,14 +176,6 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const allCommunityMembers = [
-    ...CORE_CONTRIBUTORS.map(contributor => ({
-      name: contributor.name,
-      title: contributor.title,
-      org: contributor.org,
-      location: contributor.location,
-      image: contributor.image,
-      website: contributor.website,
-    })),
     ...communityMembers
   ];
 

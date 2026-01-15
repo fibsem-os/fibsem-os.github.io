@@ -1,5 +1,18 @@
 [
   {
+    "name": "Patrick Cleeve",
+    "location": "Australia",
+    "website": "https://github.com/patrickcleeve",
+    "image": "/contributors/patrick_cleeve.jpg",
+    "affiliations": [
+      {
+        "name": "OpenFIBSEM",
+        "logo": "/prelim_FibsemOS.png",
+        "url": "https://github.com/fibsem-os"
+      }
+    ]
+  },
+  {
     "name": "Sven Klumpe",
     "location": "Austria",
     "website": "https://www.imp.ac.at/groups/sven-klumpe",
@@ -14,19 +27,6 @@
         "name": "IMBA Vienna",
         "logo": "/related_orgs/IMBA.png",
         "url": "https://www.oeaw.ac.at/imba/home"
-      }
-    ]
-  },
-  {
-    "name": "Patrick Cleeve",
-    "location": "Australia",
-    "website": "https://github.com/patrickcleeve",
-    "image": "/contributors/patrick_cleeve.jpg",
-    "affiliations": [
-      {
-        "name": "OpenFIBSEM",
-        "logo": "/prelim_FibsemOS.png",
-        "url": "https://github.com/fibsem-os"
       }
     ]
   },

@@ -1,9 +1,5 @@
 import { CoreContributor, CommunityMember, Project } from "@/app/types";
 
-export const CORE_CONTRIBUTORS: CoreContributor[] = [
-
-  
-];
 
 export const RELATED_PROJECTS: Project[] = [
   { name: "fibsemOS Organization", url: "https://github.com/fibsem-os" },
