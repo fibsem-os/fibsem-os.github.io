@@ -56,8 +56,8 @@ const CONTENT = {
         desc: "Automatic organization and metadata tracking for reproducible science.",
       },
       {
-        title: "Napari-based UI",
-        desc: "Modern interface built on the napari ecosystem.",
+        title: "User Friendly UI",
+        desc: "Modern interface tailored to the imaging ecosystem.",
       },
     ],
   },
