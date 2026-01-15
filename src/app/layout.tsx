@@ -13,9 +13,9 @@ export const metadata: Metadata = {
   title: "fibsemOS - Unified control software for FIB-SEM microscopy",
   description: "Open-source platform unifying microscope drivers, automating complex workflows, and enabling reproducible cryo-electron tomography sample preparation.",
   icons: {
-    icon: "/prelim_FibsemOS.png",
-    shortcut: "/prelim_FibsemOS.png",
-    apple: "/prelim_FibsemOS.png",
+    icon: "/favicons/favicon.ico",
+    shortcut: "/favicons/favicon.ico",
+    apple: "/favicons/favicon.ico",
   },
 };
 
