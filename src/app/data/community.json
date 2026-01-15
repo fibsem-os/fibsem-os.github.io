@@ -79,7 +79,7 @@
       }
     ]
   },
-    {
+  {
     "name": "Casper Berger",
     "image": "/community/placeholder_icecube.jpg",
     "affiliations": [
@@ -89,7 +89,7 @@
       }
     ]
   },
-    {
+  {
     "name": "Thomas Fish",
     "image": "/community/placeholder_icecube.jpg",
     "affiliations": [
@@ -109,8 +109,7 @@
         "logo": "/community/placeholder_icecube.png"
       }
     ]
-  }
-  ,
+  },
   {
     "name": "Bridget Carragher",
     "website": "https://biohub.org/",
@@ -121,9 +120,8 @@
         "logo": "/community/logos/biohub.webp"
       }
     ]
-  }
-  ,
-    {
+  },
+  {
     "name": "Garrett Greenan",
     "website": "https://biohub.org/",
     "image": "/community/placeholder_icecube.png",
@@ -133,9 +131,8 @@
         "logo": "/community/logos/biohub.webp"
       }
     ]
-  }
-  ,
-    {
+  },
+  {
     "name": "Davis Perez",
     "website": "https://biohub.org/",
     "image": "/community/placeholder_icecube.png",
@@ -145,9 +142,8 @@
         "logo": "/community/logos/biohub.webp"
       }
     ]
-  }
-  ,
-    {
+  },
+  {
     "name": "Julia Peukes",
     "website": "https://biohub.org/",
     "image": "/community/placeholder_icecube.png",
@@ -157,9 +153,8 @@
         "logo": "/community/logos/biohub.webp"
       }
     ]
-  }
-  ,
-    {
+  },
+  {
     "name": "Sophia Betzler",
     "website": "https://biohub.org/",
     "image": "/community/placeholder_icecube.png",
@@ -169,6 +164,17 @@
         "logo": "/community/logos/biohub.webp"
       }
     ]
-  } 
-
+  },
+  {
+    "name": "Sergey Gorelick",
+    "website": "https://www.monash.edu/researchinfrastructure/cryo-em",
+    "image": "/community/placeholder_icecube.png",
+    "location": "Austalia",
+    "affiliations": [
+      {
+        "name": "Monash University",
+        "logo": "/related_orgs/Monash.svg"
+      }
+    ]
+  }
 ]
