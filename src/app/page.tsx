@@ -10,7 +10,7 @@ import communityMembers from "@/app/data/community.json";
 
 const CONTENT = {
   brand: "fibsemOS",
-  
+
   nav: [
     { name: "Hardware", url: "#hardware", type: "scroll" },
     { name: "Publications", url: "#publications", type: "scroll" },
@@ -61,7 +61,7 @@ const CONTENT = {
       },
     ],
   },
-  
+
   // ... (hardware, publications, partners, footer content remains unchanged)
   hardware: {
     title: "Ecosystem",
@@ -74,8 +74,27 @@ const CONTENT = {
   },
 
   publications: {
-    title: "Publications",
+    title: "Related Publications",
     list: [
+      {
+        title: "Mitigating SEM charging",
+        journal: "Nature Communications",
+        year: "2025",
+        url: "https://www.nature.com/articles/s41467-025-60545-3"
+      },
+      {
+        title: "Cryo-ET Waffle Method (Fillets)",
+        journal: "Journal of Structural Biology",
+        year: "2025",
+        url: "https://doi.org/10.1016/j.jsb.2025.108249"
+
+      },
+      {
+        title: "Plasma FIB-SEM",
+        journal: "eLife",
+        year: "2023",
+        url: "https://doi.org/10.7554/eLife.83623"
+      },
       {
         title: "OpenFIBSEM: An open-source software platform for FIB-SEM microscopy",
         journal: "Journal of Structural Biology",
@@ -100,24 +119,9 @@ const CONTENT = {
         year: "2015",
         url: "https://doi.org/10.1016/j.bpj.2015.10.053"
       },
-      {
-        title: "Mitigating SEM charging",
-        journal: "Nature Communications",
-        year: "2025",
-        url: "https://www.nature.com/articles/s41467-025-60545-3"
-      },
-      {
-        title: "Plasma FIB-SEM",
-        journal: "eLife",
-        year: "2023",
-        url: "https://doi.org/10.7554/eLife.83623"
-      },
-      {
-        title: "Cryo-ET Waffle Method (Fillets)",
-        journal: "Journal of Structural Biology",
-        year: "2025",
-        url: "https://doi.org/10.1016/j.jsb.2025.108249"
-      }
+
+
+
     ]
   },
 
@@ -144,7 +148,7 @@ const CONTENT = {
         { name: "Discussions", url: "https://github.com/fibsem-os/fibsem-os/issues" }
       ],
       Legal: [
-         { name: "License", url: "https://github.com/fibsem-os/fibsem-os/blob/main/LICENSE" }
+        { name: "License", url: "https://github.com/fibsem-os/fibsem-os/blob/main/LICENSE" }
       ]
     },
     copyright: "© 2025 fibsemOS Contributors. Open source under MIT license.",
@@ -197,7 +201,7 @@ export default function Home() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex flex-1 items-center justify-end gap-8">
             {CONTENT.nav.map((item) => (
-               item.type === "scroll" ? (
+              item.type === "scroll" ? (
                 <Link
                   key={item.name}
                   href={item.url}
@@ -205,7 +209,7 @@ export default function Home() {
                 >
                   {item.name}
                 </Link>
-               ) : (
+              ) : (
                 <a
                   key={item.name}
                   href={item.url}
@@ -215,7 +219,7 @@ export default function Home() {
                 >
                   {item.name}
                 </a>
-               )
+              )
             ))}
 
             <div className="flex items-center gap-3 pl-4 border-l border-gray-200">
@@ -388,31 +392,31 @@ export default function Home() {
             {CONTENT.publications.title}
           </h2>
           <div className="grid grid-cols-[auto_1fr] sm:grid-cols-[auto_1fr_auto] gap-x-6 gap-y-3 items-baseline">
-             {CONTENT.publications.list.map((pub, idx) => (
-               <div key={idx} className="contents group">
-                 <div className="text-sm font-mono text-slate-400 tabular-nums">
-                    {pub.year}
-                 </div>
-                 
-                 <a 
-                   href={pub.url}
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="font-medium text-dark-navy group-hover:text-primary-blue transition-colors font-[family-name:var(--font-ibm-plex)] leading-snug"
-                 >
-                    {pub.title}
-                    <span className="sm:hidden block text-xs text-slate-400 italic font-normal mt-0.5">
-                      {pub.journal}
-                    </span>
-                 </a>
+            {CONTENT.publications.list.map((pub, idx) => (
+              <div key={idx} className="contents group">
+                <div className="text-sm font-mono text-slate-400 tabular-nums">
+                  {pub.year}
+                </div>
 
-                 <div className="hidden sm:block text-sm text-slate-500 italic text-right whitespace-nowrap">
+                <a
+                  href={pub.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-dark-navy group-hover:text-primary-blue transition-colors font-[family-name:var(--font-ibm-plex)] leading-snug"
+                >
+                  {pub.title}
+                  <span className="sm:hidden block text-xs text-slate-400 italic font-normal mt-0.5">
                     {pub.journal}
-                 </div>
-                 
-                 <div className="col-span-full border-b border-gray-100 sm:hidden my-2 last:hidden"></div>
-               </div>
-             ))}
+                  </span>
+                </a>
+
+                <div className="hidden sm:block text-sm text-slate-500 italic text-right whitespace-nowrap">
+                  {pub.journal}
+                </div>
+
+                <div className="col-span-full border-b border-gray-100 sm:hidden my-2 last:hidden"></div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -472,10 +476,10 @@ export default function Home() {
               <ul className="space-y-1">
                 {links.map((link) => (
                   <li key={link.name}>
-                    <a 
-                      href={link.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-sm text-slate-500 hover:text-primary-blue"
                     >
                       {link.name}

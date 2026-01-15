@@ -1,5 +1,62 @@
 [
   {
+    "name": "Sven Klumpe",
+    "location": "Austria",
+    "website": "https://www.imp.ac.at/groups/sven-klumpe",
+    "image": "/contributors/sven_klumpe.jpg",
+    "affiliations": [
+      {
+        "name": "IMP Vienna",
+        "logo": "/related_orgs/IMP.png",
+        "url": "https://www.imp.ac.at/"
+      },
+      {
+        "name": "IMBA Vienna",
+        "logo": "/related_orgs/IMBA.png",
+        "url": "https://www.oeaw.ac.at/imba/home"
+      }
+    ]
+  },
+  {
+    "name": "Patrick Cleeve",
+    "location": "Australia",
+    "website": "https://github.com/patrickcleeve",
+    "image": "/contributors/patrick_cleeve.jpg",
+    "affiliations": [
+      {
+        "name": "OpenFIBSEM",
+        "logo": "/prelim_FibsemOS.png",
+        "url": "https://github.com/fibsem-os"
+      }
+    ]
+  },
+  {
+    "name": "Alex de Marco",
+    "location": "USA",
+    "website": "https://nysbc.org/",
+    "image": "/contributors/alex_de_marco.jpg",
+    "affiliations": [
+      {
+        "name": "NY Structural Biology Center",
+        "logo": "/related_orgs/NYSBC.png",
+        "url": "https://nysbc.org/"
+      }
+    ]
+  },
+  {
+    "name": "Georg Ramm",
+    "location": "Australia",
+    "website": "https://research.monash.edu/en/persons/georg-ramm",
+    "image": "/contributors/georg_ramm.jpg",
+    "affiliations": [
+      {
+        "name": "Monash University",
+        "logo": "/related_orgs/Monash.svg",
+        "url": "https://www.monash.edu/"
+      }
+    ]
+  },
+  {
     "name": "Julia Mahamid",
     "website": "https://www.embl.org/groups/mahamid",
     "image": "/community/julia_mahamid.jpg",
@@ -79,7 +136,7 @@
       }
     ]
   },
-    {
+  {
     "name": "Casper Berger",
     "image": "/community/placeholder_icecube.jpg",
     "affiliations": [
@@ -89,7 +146,7 @@
       }
     ]
   },
-    {
+  {
     "name": "Thomas Fish",
     "image": "/community/placeholder_icecube.jpg",
     "affiliations": [
@@ -109,8 +166,7 @@
         "logo": "/community/placeholder_icecube.png"
       }
     ]
-  }
-  ,
+  },
   {
     "name": "Bridget Carragher",
     "website": "https://biohub.org/",
@@ -121,9 +177,8 @@
         "logo": "/community/logos/biohub.webp"
       }
     ]
-  }
-  ,
-    {
+  },
+  {
     "name": "Garrett Greenan",
     "website": "https://biohub.org/",
     "image": "/community/placeholder_icecube.png",
@@ -133,9 +188,8 @@
         "logo": "/community/logos/biohub.webp"
       }
     ]
-  }
-  ,
-    {
+  },
+  {
     "name": "Davis Perez",
     "website": "https://biohub.org/",
     "image": "/community/placeholder_icecube.png",
@@ -145,9 +199,8 @@
         "logo": "/community/logos/biohub.webp"
       }
     ]
-  }
-  ,
-    {
+  },
+  {
     "name": "Julia Peukes",
     "website": "https://biohub.org/",
     "image": "/community/placeholder_icecube.png",
@@ -157,9 +210,8 @@
         "logo": "/community/logos/biohub.webp"
       }
     ]
-  }
-  ,
-    {
+  },
+  {
     "name": "Sophia Betzler",
     "website": "https://biohub.org/",
     "image": "/community/placeholder_icecube.png",
@@ -169,6 +221,5 @@
         "logo": "/community/logos/biohub.webp"
       }
     ]
-  } 
-
+  }
 ]
