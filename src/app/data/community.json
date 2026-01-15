@@ -221,5 +221,17 @@
         "logo": "/community/logos/biohub.webp"
       }
     ]
+  },
+  {
+    "name": "Sergey Gorelick",
+    "website": "https://www.monash.edu/researchinfrastructure/cryo-em",
+    "image": "/community/placeholder_icecube.png",
+    "location": "Austalia",
+    "affiliations": [
+      {
+        "name": "Monash University",
+        "logo": "/related_orgs/Monash.svg"
+      }
+    ]
   }
 ]

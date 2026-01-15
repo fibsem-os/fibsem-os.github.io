@@ -14,7 +14,7 @@ const CONTENT = {
     { name: "Hardware", url: "#hardware", type: "scroll" },
     { name: "Publications", url: "#publications", type: "scroll" },
     { name: "Documentation", url: "https://deepwiki.com/fibsem-os/fibsem-os", type: "external" },
-    { name: "Get Started", url: "https://github.com/fibsem-os", type: "external" }
+    { name: "Get Started", url: "https://github.com/fibsem-os/fibsem-os", type: "external" }
   ],
 
   socials: {
