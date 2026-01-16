@@ -6,9 +6,14 @@
     "image": "/contributors/patrick_cleeve.jpg",
     "affiliations": [
       {
-        "name": "OpenFIBSEM",
+        "name": "fibsemOS",
         "logo": "/prelim_FibsemOS.png",
         "url": "https://github.com/fibsem-os"
+      },
+      {
+        "name": "Monash University",
+        "logo": "/related_orgs/Monash.svg",
+        "url": "https://www.monash.edu/"
       }
     ]
   },
@@ -58,6 +63,7 @@
   },
   {
     "name": "Julia Mahamid",
+    "location": "Germany",
     "website": "https://www.embl.org/groups/mahamid",
     "image": "/community/julia_mahamid.jpg",
     "affiliations": [
@@ -70,6 +76,7 @@
   },
   {
     "name": "Linhua Tan",
+    "location": "Germany",
     "website": "https://www.embl.org",
     "image": "/community/linhua_tan.jpg",
     "affiliations": [
@@ -81,6 +88,7 @@
   },
   {
     "name": "Jenny Sachweh",
+    "location": "Germany",
     "website": "https://www.embl.org",
     "image": "/community/jenny_sachweh.jpg",
     "affiliations": [
@@ -92,6 +100,7 @@
   },
   {
     "name": "Jürgen Plitzko",
+    "location": "Germany",
     "website": "https://www.biochem.mpg.de/plitzko",
     "image": "/community/juergen_plitzko.jpg",
     "affiliations": [
@@ -104,6 +113,7 @@
   },
   {
     "name": "Johann Brenner",
+    "location": "Germany",
     "website": "https://www.biochem.mpg.de",
     "image": "/community/johann_brenner.jpg",
     "affiliations": [
@@ -115,6 +125,7 @@
   },
   {
     "name": "Maud Dumoux",
+    "location": "UK",
     "website": "https://www.rfi.ac.uk/people/maud-dumoux/",
     "image": "/community/maud_dumoux.jpg",
     "affiliations": [
@@ -127,6 +138,7 @@
   },
   {
     "name": "Michael Grange",
+    "location": "UK",
     "website": "https://www.rfi.ac.uk/people/michael-grange/",
     "image": "/community/michael_grange.jpg",
     "affiliations": [
@@ -138,6 +150,8 @@
   },
   {
     "name": "Casper Berger",
+    "location": "UK",
+    "website": "https://www.rfi.ac.uk",
     "image": "/community/placeholder_icecube.jpg",
     "affiliations": [
       {
@@ -148,6 +162,8 @@
   },
   {
     "name": "Thomas Fish",
+    "location": "UK",
+    "website": "https://www.rfi.ac.uk",
     "image": "/community/placeholder_icecube.jpg",
     "affiliations": [
       {
@@ -158,17 +174,20 @@
   },
   {
     "name": "Rohit Kannachel",
+    "location": "USA",
     "website": "https://nysbc.org/",
     "image": "/community/placeholder_icecube.png",
     "affiliations": [
       {
         "name": "NY Structural Biology Center",
-        "logo": "/community/placeholder_icecube.png"
+        "logo": "/related_orgs/NYSBC.png",
+        "url": "https://nysbc.org/"
       }
     ]
   },
   {
     "name": "Bridget Carragher",
+    "location": "USA",
     "website": "https://biohub.org/",
     "image": "/community/placeholder_icecube.png",
     "affiliations": [
@@ -180,6 +199,7 @@
   },
   {
     "name": "Garrett Greenan",
+    "location": "USA",
     "website": "https://biohub.org/",
     "image": "/community/placeholder_icecube.png",
     "affiliations": [
@@ -191,6 +211,7 @@
   },
   {
     "name": "Davis Perez",
+    "location": "USA",
     "website": "https://biohub.org/",
     "image": "/community/placeholder_icecube.png",
     "affiliations": [
@@ -202,6 +223,7 @@
   },
   {
     "name": "Julia Peukes",
+    "location": "USA",
     "website": "https://biohub.org/",
     "image": "/community/placeholder_icecube.png",
     "affiliations": [
@@ -213,6 +235,7 @@
   },
   {
     "name": "Sophia Betzler",
+    "location": "USA",
     "website": "https://biohub.org/",
     "image": "/community/placeholder_icecube.png",
     "affiliations": [
@@ -224,9 +247,9 @@
   },
   {
     "name": "Sergey Gorelick",
+    "location": "Australia",
     "website": "https://www.monash.edu/researchinfrastructure/cryo-em",
     "image": "/community/placeholder_icecube.png",
-    "location": "Austalia",
     "affiliations": [
       {
         "name": "Monash University",
