@@ -76,51 +76,47 @@ const CONTENT = {
     title: "Related Publications",
     list: [
       {
-        title: "Mitigating SEM charging",
+        title: "Reduction of SEM charging artefacts in native cryogenic biological samples",
         journal: "Nature Communications",
         year: "2025",
         url: "https://www.nature.com/articles/s41467-025-60545-3"
       },
       {
-        title: "Cryo-ET Waffle Method (Fillets)",
+        title: "Mind the corner: Fillets in cryo-FIB lamella preparation to minimise sample loss",
         journal: "Journal of Structural Biology",
         year: "2025",
         url: "https://doi.org/10.1016/j.jsb.2025.108249"
-
       },
       {
-        title: "Plasma FIB-SEM",
+        title: "Cryo-plasma FIB/SEM volume imaging of biological specimens",
         journal: "eLife",
         year: "2023",
         url: "https://doi.org/10.7554/eLife.83623"
       },
       {
-        title: "OpenFIBSEM: An open-source software platform for FIB-SEM microscopy",
+        title: "OpenFIBSEM: A universal API for FIBSEM control",
         journal: "Journal of Structural Biology",
         year: "2023",
         url: "https://doi.org/10.1016/j.jsb.2023.107967"
       },
       {
-        title: "SerialFIB: an open-source software for automated cryo-FIB milling",
+        title: "SerialFIB: A modular platform for automated cryo-FIB workflows",
         journal: "eLife",
         year: "2021",
         url: "https://elifesciences.org/articles/70506"
       },
       {
-        title: "Automated cryo-FIB lamella preparation",
+        title: "Automated cryo-lamella preparation for high-throughput in-situ structural biology",
         journal: "Journal of Structural Biology",
         year: "2020",
         url: "https://doi.org/10.1016/j.jsb.2020.107488"
       },
       {
-        title: "3DCT: 3D correlative tomography",
+        title: "Site-Specific Cryo-focused Ion Beam Sample Preparation Guided by 3D Correlative Microscopy",
         journal: "Biophysical Journal",
-        year: "2015",
+        year: "2016",
         url: "https://doi.org/10.1016/j.bpj.2015.10.053"
       },
-
-
-
     ]
   },
 
