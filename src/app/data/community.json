@@ -265,7 +265,11 @@
     "affiliations": [
       {
         "name": "IMBA Vienna",
-        "logo": "/related_orgs/IMBA.png",
+        "logo": "/related_orgs/IMBA.png"
+      },
+      {
+        "name": "IMP Vienna",
+        "logo": "/related_orgs/IMP.png"
       }
     ]
   }
