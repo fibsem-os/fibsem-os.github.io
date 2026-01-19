@@ -257,4 +257,22 @@
       }
     ]
   }
+  {
+    "name": "Artem Kushner",
+    "location": "Austria",
+    "website": "https://www.imp.ac.at/groups/sven-klumpe",
+    "image": "/community/placeholder_icecube.png",
+    "affiliations": [
+      {
+        "name": "IMP Vienna",
+        "logo": "/related_orgs/IMP.png",
+        "url": "https://www.imp.ac.at/"
+      },
+      {
+        "name": "IMBA Vienna",
+        "logo": "/related_orgs/IMBA.png",
+        "url": "https://www.oeaw.ac.at/imba/home"
+      }
+    ]
+  }
 ]
