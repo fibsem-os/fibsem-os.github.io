@@ -264,10 +264,6 @@
     "image": "/community/placeholder_icecube.png",
     "affiliations": [
       {
-        "name": "IMP Vienna",
-        "logo": "/related_orgs/IMP.png",
-      },
-      {
         "name": "IMBA Vienna",
         "logo": "/related_orgs/IMBA.png",
       }
