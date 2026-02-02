@@ -9,12 +9,11 @@ import communityMembers from "@/app/data/community.json";
 
 const CONTENT = {
   brand: "fibsemOS",
-
   nav: [
     { name: "Hardware", url: "#hardware", type: "scroll" },
     { name: "Publications", url: "#publications", type: "scroll" },
-    { name: "Documentation", url: "https://deepwiki.com/fibsem-os/fibsem-os", type: "external" },
-    { name: "Get Started", url: "https://github.com/fibsem-os/fibsem-os", type: "external" }
+    { name: "Documentation", url: "/docs", type: "route" },
+    { name: "Get Started", url: "/docs/#on-grid-lamella-milling-walkthrough", type: "external" }
   ],
 
   socials: {
@@ -61,7 +60,6 @@ const CONTENT = {
     ],
   },
 
-  // ... (hardware, publications, partners, footer content remains unchanged)
   hardware: {
     title: "Ecosystem",
     vendors: [
@@ -135,7 +133,7 @@ const CONTENT = {
     description: "Open-source control software for FIB-SEM microscopy.",
     sections: {
       Resources: [
-        { name: "Documentation", url: "https://deepwiki.com/fibsem-os/fibsem-os" },
+        { name: "Documentation", url: "/docs" },
         { name: "Downloads", url: "https://github.com/fibsem-os/fibsem-os/releases" }
       ],
       Community: [
@@ -196,6 +194,14 @@ export default function Home() {
                 >
                   {item.name}
                 </Link>
+              ) : item.type === "route" ? (
+                <Link
+                  key={item.name}
+                  href={item.url}
+                  className="text-sm text-slate-500 hover:text-primary-blue transition-colors font-medium"
+                >
+                  {item.name}
+                </Link>
               ) : (
                 <a
                   key={item.name}
@@ -240,16 +246,27 @@ export default function Home() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-cream border-t border-gray-200 px-4 py-2 shadow-lg">
             {CONTENT.nav.map((item) => (
-              <a
-                key={item.name}
-                href={item.url}
-                target={item.type === "external" ? "_blank" : undefined}
-                rel={item.type === "external" ? "noopener noreferrer" : undefined}
-                className="block py-2 text-sm text-slate-600 hover:text-primary-blue"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </a>
+              item.type === "route" ? (
+                <Link
+                  key={item.name}
+                  href={item.url}
+                  className="block py-2 text-sm text-slate-600 hover:text-primary-blue"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.url}
+                  target={item.type === "external" ? "_blank" : undefined}
+                  rel={item.type === "external" ? "noopener noreferrer" : undefined}
+                  className="block py-2 text-sm text-slate-600 hover:text-primary-blue"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              )
             ))}
           </div>
         )}
@@ -463,14 +480,23 @@ export default function Home() {
               <ul className="space-y-1">
                 {links.map((link) => (
                   <li key={link.name}>
-                    <a
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-slate-500 hover:text-primary-blue"
-                    >
-                      {link.name}
-                    </a>
+                    {link.url.startsWith("/") ? (
+                      <Link
+                        href={link.url}
+                        className="text-sm text-slate-500 hover:text-primary-blue"
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-slate-500 hover:text-primary-blue"
+                      >
+                        {link.name}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -485,3 +511,4 @@ export default function Home() {
     </main>
   );
 }
+

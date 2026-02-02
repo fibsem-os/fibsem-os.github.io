@@ -1,3 +1,14 @@
+---
+title: Documentation
+---
+
+# fibsemOS Documentation
+
+This page covers installation, setup, and the main workflows in fibsemOS.
+
+If you’re new here, start with the setup and UI overview, then follow the walkthroughs below.
+
+
 # Getting Started
 This guide will walk you through the complete workflow for automated cryo-lamella preparation using fibsemOS and AutoLamella. Currently this workflow is only available on Thermo Fisher hardware.
 
@@ -15,8 +26,8 @@ conda activate fibsem
 fibsem-autolamella-ui
 ```
 
-![Terminal Start](../../../public/doc/img/01-terminal-start.png)
-![User Interface Start](../../../public/doc/img/02-user-interface-start-disconnected.png)
+![Terminal Start](/doc/img/01-terminal-start.png)
+![User Interface Start](/doc/img/02-user-interface-start-disconnected.png)
 
 If you used a different environment manager (e.g. venv, uv), replace with the relevant instructions to activate the environment.
 
@@ -25,20 +36,20 @@ If you used a different environment manager (e.g. venv, uv), replace with the re
 - Ensure the correct microscope configuration is selected. See microscope configuration page for more information on configurations. We provide configurations for most supported systems.
 - Press 'Connect to Microscope'. The button should turn green, and other microscope control tabs (Imaging, Movement, Milling) should appear. 
 
-![Microscope Connected](../../../public/doc/img/03-user-interface-start-connected.png)
+![Microscope Connected](/doc/img/03-user-interface-start-connected.png)
 
 
 ## Creating an Experiment
 - An experiment is the collection of data in a single 'session'. Typically this is the loading of a grid / set of grids.
 - To create a new experiment, Select File -> Create Experiment. The create experiment dialog will open. 
 
-![File Menu](../../../public/doc/img/04-user-interface-file-menu.png)
+![File Menu](/doc/img/04-user-interface-file-menu.png)
 
 - The experiment requires a unique name and directory. You can also add additional optional metadata to the experiment for further analysis (project, institute, user, sample). 
 - You also need to select a protocol to associate with the experiment. Protocols define the task configuration and workflow. More details on protocols below. 
 - A copy of the protocol file will be saved into the experiment directory, and automatically updated when editing the experiment/protocol in the program. 
 
-![Create Experiment](../../../public/doc/img/05-user-interface-create-experiment.png)
+![Create Experiment](/doc/img/05-user-interface-create-experiment.png)
 
 ### Protocol Files
  - Protocols are stored in yaml files
@@ -81,7 +92,7 @@ The experiment tab shows information about lamella and controls the execution of
 ## Tools
 There are two other windows that are used in the workflow. The Overview Acquisition Widget and Protocol Editor.
 
-![Tools Menu](../../../public/doc/img/06-user-interface-tools-menu.png)
+![Tools Menu](/doc/img/06-user-interface-tools-menu.png)
 ### Overview Acquisition Widget
 The overview widget controls overview (tiled) image acquisition and allows selecting lamella positions.
 To open the overview acquisition: Tools -> Open Overview Acquisition
@@ -92,7 +103,7 @@ Prepare for overview acquisition in the main GUI.
 - Ensure SEM/FIB coincidence
 
 Note: the overview image in the screenshots is acquired at the milling angle orientation. This is possible, but it's recommended when first starting you acquire at the SEM orientation.
-![Overview Widget](../../../public/doc/img/09-user-interface-overview-acquisition.png)
+![Overview Widget](/doc/img/09-user-interface-overview-acquisition.png)
 
 #### Tiled Image Acquisition
 To acquire an overview image of the grid:
@@ -102,7 +113,7 @@ To acquire an overview image of the grid:
 
 You can choose to acquire an overview with the SEM or FIB. Currently only one overview image can be displayed at a time.
 
-![Tiled Acquisition](../../../public/doc/img/10-user-interface-overview-acquisition-progress.png)
+![Tiled Acquisition](/doc/img/10-user-interface-overview-acquisition-progress.png)
 
 #### Selecting Lamella Positions
 From the overview, you can add lamella positions by clicking on the image.
@@ -110,7 +121,7 @@ From the overview, you can add lamella positions by clicking on the image.
 - The position will be added at the orientation the image was acquired at.
 - You can only add positions inside the image area.
 
-![Select Lamella Position](../../../public/doc/img/11-user-interface-overview-acquisition-select-positions.png)
+![Select Lamella Position](/doc/img/11-user-interface-overview-acquisition-select-positions.png)
 
 From the main UI, you can add lamella positions in the Experiment tab.
 - Press 'Add Lamella' in the Setup section
@@ -121,13 +132,13 @@ From the main UI, you can add lamella positions in the Experiment tab.
 If you want to review the lamella positions selected from the overview, you can do it from the main GUI. 
 
 Press Go to Position to move to the selected lamella position
-![Move to Position](../../../public/doc/img/12-user-interface-move-to-position.png)
+![Move to Position](/doc/img/12-user-interface-move-to-position.png)
 
 You can adjust the position, by double-clicking on the images. You can adjust coincidence by holding Alt + Double Click in the FIB image.
-![Adjust Coincidence](../../../public/doc/img/13-user-interface-move-to-coincident.png)
+![Adjust Coincidence](/doc/img/13-user-interface-move-to-coincident.png)
 
 To save the current stage position press the orange Update Position button
-![Update Position](../../../public/doc/img/14-user-interface-update-position.png)
+![Update Position](/doc/img/14-user-interface-update-position.png)
 
 
 ### Protocol Editor
@@ -140,14 +151,14 @@ Defines the complete task-based workflow protocol for an AutoLamella experiment.
 
 Task configuration can be edited in the 'Protocol' tab.
 
-![Protocol Editor - Task](../../../public/doc/img/07-user-interface-protocol-editor-tasks.png)
+![Protocol Editor - Task](/doc/img/07-user-interface-protocol-editor-tasks.png)
 
 To apply the protocol to existing lamellae press 'Sync Config to Existing Lamella'. This will update the parameters, and milling parameters but not the position of the milling patterns. 
 
 
-![Protocol Editor - Task Parameters](../../../public/doc/img/99-user-interface-protocol-editor-task-edit.png)
+![Protocol Editor - Task Parameters](/doc/img/99-user-interface-protocol-editor-task-edit.png)
 
-![Protocol Editor - Milling Parameters](../../../public/doc/img/99-user-interface-protocol-editor-milling-edit.png)
+![Protocol Editor - Milling Parameters](/doc/img/99-user-interface-protocol-editor-milling-edit.png)
 
 
 To globally edit some parameters (imaging conditions) for all tasks, use File -> Global Edit...
@@ -158,7 +169,7 @@ To export the protocol to a file, use File -> Export Protocol. The protocol is a
 
 Defines the execution order and dependencies between tasks in an AutoLamella workflow. Specifies which tasks are required, which need user supervision, and their prerequisite relationships. Validates task dependencies and tracks completion status for individual lamellae. Provides methods to query remaining tasks and workflow completion status.
 
-![Protocol Editor - Workflow](../../../public/doc/img/08-user-interface-protocol-editor-workflow.png)
+![Protocol Editor - Workflow](/doc/img/08-user-interface-protocol-editor-workflow.png)
 
 **Workflow Tasks**
 
@@ -184,7 +195,7 @@ As the workflow is executed, acquired images will be available to view in this t
 
 It is recommended to select the milling position before starting to edit each lamella. The lamella configurations can be edited while the workflow is running. 
 
-![Protocol Editor - Lamella](../../../public/doc/img/25-user-interface-protocol-editor-lamella-edit.png)
+![Protocol Editor - Lamella](/doc/img/25-user-interface-protocol-editor-lamella-edit.png)
 
 ## Running the Workflow
 The workflow tasks can be run individually or sequentially.
@@ -194,11 +205,11 @@ The workflow tasks can be run individually or sequentially.
 - You can select the lamella and task combinations you want to run.
 
 
-![Run Workflow](../../../public/doc/img/15-user-interface-run-workflow-start.png)
+![Run Workflow](/doc/img/15-user-interface-run-workflow-start.png)
 
-![Run Workflow 2](../../../public/doc/img/16a-user-interface-run-workflow-1.png)
+![Run Workflow 2](/doc/img/16a-user-interface-run-workflow-1.png)
 
-![Run Workflow 2 xt](../../../public/doc/img/16a-user-interface-run-workflow-xtui.png)
+![Run Workflow 2 xt](/doc/img/16a-user-interface-run-workflow-xtui.png)
 
 
 
@@ -222,15 +233,15 @@ Supervision is a mode you can enable for each task, that will ask you to confirm
 For example, the following shows the supervised mode for 'Setup Lamella Position'
 
 Confirm Tilt to the milling angle
-![Supervised Workflow 1](../../../public/doc/img/17-user-interface-workflow-supervised-01.png)
+![Supervised Workflow 1](/doc/img/17-user-interface-workflow-supervised-01.png)
 
 Confirm milling position after tilt
-![Supervised Workflow 2](../../../public/doc/img/17-user-interface-workflow-supervised-02.png)
+![Supervised Workflow 2](/doc/img/17-user-interface-workflow-supervised-02.png)
 
 Adjust the alignment area:
-![Supervised Workflow 3](../../../public/doc/img/17-user-interface-workflow-supervised-03.png)
+![Supervised Workflow 3](/doc/img/17-user-interface-workflow-supervised-03.png)
 
-![Supervised Workflow 4](../../../public/doc/img/17-user-interface-workflow-supervised-04.png)
+![Supervised Workflow 4](/doc/img/17-user-interface-workflow-supervised-04.png)
 
 
 #### **Setup Lamella Position**
@@ -294,29 +305,29 @@ Performs fine polishing milling to thin the lamella to the final target thicknes
 ## Example Lamella Workflow
 The following shows the full workflow for a lamella:
 
-![Workflow Start - Both GUIs](../../../public/doc/img/L01-lamella-workflow-start-both-gui.png)
-![Run Workflow Dialog](../../../public/doc/img/L02-lamella-workflow-run-workflow.png)
-![Confirm Lamella Position](../../../public/doc/img/L03-lamella-workflow-confirm-position.png)
-![Edit Alignment Area](../../../public/doc/img/L04-lamella-workflow-edit-alignment-area.png)
-![Edit Rough Milling Pattern](../../../public/doc/img/L05-lamella-workflow-edit-rough-milling.png)
-![Fiducial Milling Step 1](../../../public/doc/img/L06-lamella-workflow-fiducial-milling-01.png)
-![Fiducial Milling Step 2](../../../public/doc/img/L06-lamella-workflow-fiducial-milling-02.png)
-![Fiducial Milling Step 3](../../../public/doc/img/L06-lamella-workflow-fiducial-milling-03.png)
-![Fiducial Milling Complete](../../../public/doc/img/L07-lamella-workflow-fiducial-milling-end.png)
-![Edit Alignment After Fiducial](../../../public/doc/img/L08-lamella-workflow-fiducial-milling-edit-alignment.png)
-![Rough Milling Start](../../../public/doc/img/L09-lamella-workflow-rough-milling-start.png)
-![Rough Milling XT Step 1](../../../public/doc/img/L10-lamella-workflow-rough-milling-xt-01.png)
-![Rough Milling XT Step 2](../../../public/doc/img/L10-lamella-workflow-rough-milling-xt-02.png)
-![Rough Milling XT Step 3](../../../public/doc/img/L10-lamella-workflow-rough-milling-xt-03.png)
-![Rough Milling XT Step 4](../../../public/doc/img/L10-lamella-workflow-rough-milling-xt-04.png)
-![Rough Milling XT Step 5](../../../public/doc/img/L10-lamella-workflow-rough-milling-xt-05.png)
-![Rough Milling Complete](../../../public/doc/img/L11-lamella-workflow-rough-milling-end.png)
-![Polishing Start](../../../public/doc/img/L12-lamella-workflow-polishing-start.png)
-![Polishing Run Step 1](../../../public/doc/img/L13-lamella-workflow-polishing-run-01.png)
-![Polishing Run Step 2](../../../public/doc/img/L13-lamella-workflow-polishing-run-02.png)
-![Polishing Run Step 3](../../../public/doc/img/L13-lamella-workflow-polishing-run-03.png)
-![Polishing Re-run](../../../public/doc/img/L14-lamella-workflow-polishing-re-run.png)
-![Polishing Complete - Both Views](../../../public/doc/img/L15-lamella-workflow-polishing-both.png)
+![Workflow Start - Both GUIs](/doc/img/L01-lamella-workflow-start-both-gui.png)
+![Run Workflow Dialog](/doc/img/L02-lamella-workflow-run-workflow.png)
+![Confirm Lamella Position](/doc/img/L03-lamella-workflow-confirm-position.png)
+![Edit Alignment Area](/doc/img/L04-lamella-workflow-edit-alignment-area.png)
+![Edit Rough Milling Pattern](/doc/img/L05-lamella-workflow-edit-rough-milling.png)
+![Fiducial Milling Step 1](/doc/img/L06-lamella-workflow-fiducial-milling-01.png)
+![Fiducial Milling Step 2](/doc/img/L06-lamella-workflow-fiducial-milling-02.png)
+![Fiducial Milling Step 3](/doc/img/L06-lamella-workflow-fiducial-milling-03.png)
+![Fiducial Milling Complete](/doc/img/L07-lamella-workflow-fiducial-milling-end.png)
+![Edit Alignment After Fiducial](/doc/img/L08-lamella-workflow-fiducial-milling-edit-alignment.png)
+![Rough Milling Start](/doc/img/L09-lamella-workflow-rough-milling-start.png)
+![Rough Milling XT Step 1](/doc/img/L10-lamella-workflow-rough-milling-xt-01.png)
+![Rough Milling XT Step 2](/doc/img/L10-lamella-workflow-rough-milling-xt-02.png)
+![Rough Milling XT Step 3](/doc/img/L10-lamella-workflow-rough-milling-xt-03.png)
+![Rough Milling XT Step 4](/doc/img/L10-lamella-workflow-rough-milling-xt-04.png)
+![Rough Milling XT Step 5](/doc/img/L10-lamella-workflow-rough-milling-xt-05.png)
+![Rough Milling Complete](/doc/img/L11-lamella-workflow-rough-milling-end.png)
+![Polishing Start](/doc/img/L12-lamella-workflow-polishing-start.png)
+![Polishing Run Step 1](/doc/img/L13-lamella-workflow-polishing-run-01.png)
+![Polishing Run Step 2](/doc/img/L13-lamella-workflow-polishing-run-02.png)
+![Polishing Run Step 3](/doc/img/L13-lamella-workflow-polishing-run-03.png)
+![Polishing Re-run](/doc/img/L14-lamella-workflow-polishing-re-run.png)
+![Polishing Complete - Both Views](/doc/img/L15-lamella-workflow-polishing-both.png)
 
 ## Cheat Sheet (Controls)
 
@@ -331,3 +342,4 @@ The following shows the full workflow for a lamella:
 
 ### Fluorescence Imaging
 - Shift + Scroll: Move Objective by Step Size
+

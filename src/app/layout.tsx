@@ -11,7 +11,8 @@ const ibmPlex = IBM_Plex_Sans({
 
 export const metadata: Metadata = {
   title: "fibsemOS - Unified control software for FIB-SEM microscopy",
-  description: "Open-source platform unifying microscope drivers, automating complex workflows, and enabling reproducible cryo-electron tomography sample preparation.",
+  description:
+    "Open-source platform unifying microscope drivers, automating complex workflows, and enabling reproducible cryo-electron tomography sample preparation.",
   icons: {
     icon: "/favicons/favicon.ico",
     shortcut: "/favicons/favicon.ico",
@@ -25,8 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} ${ibmPlex.variable}`}>{children}</body>
     </html>
   );
 }
+
