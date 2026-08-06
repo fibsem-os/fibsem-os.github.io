@@ -87,6 +87,18 @@
     ]
   },
   {
+    "name": "Sebastian Unger",
+    "location": "Germany",
+    "website": "https://www.embl.org",
+    "image": "/community/linhua_tan.jpg",
+    "affiliations": [
+      {
+        "name": "European Molecular Biology Laboratory (EMBL)",
+        "logo": "/community/logos/embl_logo.png"
+      }
+    ]
+  },
+  {
     "name": "Jenny Sachweh",
     "location": "Germany",
     "website": "https://www.embl.org",
