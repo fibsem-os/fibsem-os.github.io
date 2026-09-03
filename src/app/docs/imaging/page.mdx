@@ -20,9 +20,11 @@ and saved an image to disk.
 
 ## 1. The Image tab
 
-Open the **Image** tab in the control panel. It has two settings panels and a
-row of buttons, and the difference between the two panels is the thing to
-understand on this page.
+Open the **Image** tab in the control panel on the right (the regions of the
+window are named in
+[Around the window](/docs/getting-started#5-around-the-window)). It has two
+settings panels and a row of buttons, and the difference between the two
+panels is the thing to understand on this page.
 
 ![The Image tab: the beam panel, the image panel, and the acquire buttons](/doc/img/imaging/image-tab.png)
 
@@ -48,8 +50,8 @@ where people get caught. The beam panel's copy is what the microscope is set
 to right now; the Image panel's copy is what the next acquisition will use,
 and the acquisition sets the microscope to it on the way. So: to take a
 picture at 50 µm, set 50 µm in the Image panel and acquire. Use the beam
-panel when you mean to change the instrument itself, such as switching the
-ion beam current before milling, or the detector.
+panel when you mean to change the instrument itself, such as the beam
+current, the working distance or the detector.
 
 ## 2. Take the first images
 
@@ -98,9 +100,8 @@ beam.
 ![The beam panel for the SEM](/doc/img/imaging/beam-panel.png)
 
 - **Beam current** sets how much signal there is against how much the beam
-  damages the sample. Low currents for imaging, higher ones for milling.
-  Changing the ion beam current also changes where the beam lands slightly,
-  which is why milling runs an alignment after switching current.
+  damages the sample. Keep it low for imaging; the milling currents are set
+  in the milling stages themselves, not here.
 - **Working distance** is the focus. **Run AutoFocus** (**F11**) sets it from
   the image; on a real instrument that takes a few seconds per beam.
 - **Brightness** and **contrast** are the detector's. **Run AutoContrast**
@@ -133,6 +134,10 @@ image with the lamella it belongs to.
 gets a green border and a LIVE badge, the other controls are disabled while
 it runs, and the button becomes **Stop Acquisition**. Use it to focus and to
 watch the stage move; stop it before running anything else.
+
+To focus by eye while live, hold **Shift** and scroll over the view: each
+notch nudges that beam's working distance, and the live frames show the
+result. Plain scrolling zooms the view instead.
 
 ![Live imaging on the SEM](/doc/img/imaging/live.png)
 
