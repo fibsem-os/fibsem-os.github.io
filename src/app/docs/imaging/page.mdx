@@ -67,13 +67,44 @@ the sample height. That difference is what the coincidence alignment removes,
 and it is why every position in fibsemOS is recorded with the beam it was
 seen in.
 
-Each view has a scale bar, a crosshair at the beam centre, and a line at the
-bottom with the stage position when the image was taken. Scroll to zoom in a
-view and drag to pan it; the buttons at the top right of the selected view
-reset the view and toggle the scale bar, crosshair, contrast controls and a
-ruler for measuring.
+## 3. What is drawn on a view
 
-## 3. Field of view
+Scroll to zoom a view and drag to pan it. On top of the image each view
+draws a few things of its own.
+
+- **The crosshair** marks the beam centre, which is where a new milling
+  pattern is placed by default.
+- **The scale bar** follows the field of view.
+- **The text at the bottom** is the stage position when the image was taken,
+  followed by the orientation it was at (`[SEM]`, `[FIB]`, `[MILLING]`) and
+  the grid the position belongs to. The FIB view adds the milling angle, the
+  angle between the ion beam and the sample at the current tilt; the
+  fluorescence view adds the objective position.
+
+The buttons at the top right of the selected view control the rest.
+
+![The view toolbar: ruler, contrast, crosshair, scale bar, reset](/doc/img/imaging/view-toolbar.png)
+
+1. **Ruler.** Drag across the image to measure a distance. While the ruler
+   is on it owns the mouse, so a double-click will not move the stage; turn
+   it off to get that back.
+2. **Contrast and gamma.** Opens a small panel to stretch the display of the
+   image on screen. Display only: it changes nothing on the microscope and
+   nothing in a saved image. For the detector's own brightness and contrast
+   use the beam panel.
+3. **Crosshair** on or off.
+4. **Scale bar** on or off.
+5. **Reset view.** Fit the whole image back into the panel after zooming or
+   panning.
+
+![The contrast and gamma panel open on the SEM view](/doc/img/imaging/view-contrast.png)
+
+A sixth button appears when something else owns the mouse in the view, such
+as a milling pattern being drawn; it shows what is active and returns the
+view to normal when clicked. To give one view the whole window, press **F5**
+(or **View → Full Screen View**); **Esc** brings the others back.
+
+## 4. Field of view
 
 The field of view is the width of the image on the sample. Set it in the
 Image panel and acquire the SEM image again at each of these values.
@@ -92,7 +123,7 @@ The FIB view at the same field of view shows the same square, foreshortened:
 
 ![FIB at 150 µm](/doc/img/imaging/fib-150um.png)
 
-## 4. Beam and detector settings
+## 5. Beam and detector settings
 
 Pick **SEM** or **FIB** at the top of the beam panel to see and change that
 beam.
@@ -114,7 +145,7 @@ beam.
 Everything on this panel is applied to the instrument as you change it. The
 microscope's own software shows the same values a moment later.
 
-## 5. Save an image
+## 6. Save an image
 
 Images are not saved unless you ask. In the Image panel tick **Save Image**
 (1), choose the folder (2) and type a filename (3). The next acquisition is
@@ -128,7 +159,7 @@ Once an experiment is open, **Save with Selected Lamella** saves into the
 selected lamella's own folder instead, which is how the workflow keeps every
 image with the lamella it belongs to.
 
-## 6. Live imaging
+## 7. Live imaging
 
 **Start Acquisition** streams frames from the selected beam. The live view
 gets a green border and a LIVE badge, the other controls are disabled while
