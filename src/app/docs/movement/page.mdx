@@ -168,6 +168,36 @@ along the ion beam's axis by the amount that centres it there.
 The AutoLamella workflow makes the same correction for you at each lamella,
 from a measurement rather than a click.
 
+## 6. Eucentricity
+
+Coincidence is about height: the sample surface at the point where the two
+beams cross. **Eucentricity** is about the tilt axis: the surface at the
+height the stage tilts about, so that tilting the stage turns the sample in
+place and a feature under the beam stays under it. The two are different
+things. The beams are aligned by the manufacturer to cross at the tilt axis,
+but the height of that axis is a property of the mechanics, and on most
+stages it is not exactly where the beams cross. So you can be perfectly
+coincident, with a feature centred in both views, and still watch it slide
+away when you tilt.
+
+This is that case on the simulator. The cross is in coincidence, and the
+surface sits 30 µm above the tilt axis. Tilting to the MILLING orientation
+swings it along the surface, down in the SEM view and, foreshortened, in the
+FIB view, and changes its height, so the coincidence just set is lost as
+well:
+
+![After tilting to the MILLING orientation: the cross has moved off centre](/doc/img/movement/eucentric-after-tilt.png)
+
+fibsemOS does not try to find the eucentric height for you. Doing it well
+means tilting back and forth, measuring the shift each time and adjusting z
+until it stops, which is slow, needs a feature the microscope can find at
+every tilt, and on a compustage is harder still. Instead it re-centres after
+a tilt: the workflow moves to the milling angle, takes an image, and moves the
+feature back under the beam with a stable move, then restores coincidence
+there. That is why every lamella has a milling position recorded at its own
+tilt, rather than one position for all orientations. By hand, do the same:
+tilt, then double-click the feature to bring it back.
+
 ## Next
 
 [Milling](/docs/milling): draw a pattern on the FIB view and mill it.
