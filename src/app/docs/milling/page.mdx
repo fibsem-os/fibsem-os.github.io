@@ -1,0 +1,142 @@
+---
+title: Milling
+---
+
+# Milling
+
+By the end of this page you have set up a milling task with one stage,
+placed its pattern on the FIB view, milled it on the simulator and seen the
+trench appear in both views.
+
+## Before you start
+
+- You are [connected](/docs/getting-started), have
+  [imaged](/docs/imaging) the grid, and are at the
+  [MILLING orientation](/docs/movement#2-the-three-orientations) with the
+  feature to mill in coincidence. Everything on this page happens in the FIB
+  view, so take a fresh FIB image first.
+- On the simulator, milled patterns are cut into the synthetic grid and show
+  up in every later image, so you can try anything here without cost.
+
+## 1. The Milling tab
+
+![The Milling tab: milling parameters, alignment, acquisition, stages, run](/doc/img/milling/milling-tab.png)
+
+The tab holds one **milling task**: everything needed to mill one thing at
+one place. It has four parts, top to bottom.
+
+- **(1) Milling parameters**: a name for the task and the field of view the
+  FIB is set to while milling. Patterns are placed at this field of view, so
+  choose it before placing them; 150 µm suits a lamella, a trench wants
+  less.
+- **(2) Alignment**: drift correction. Before each stage, fibsemOS takes a
+  FIB image at that stage's current and aligns it to the reference image, so
+  a pattern lands where you placed it even though the beam moved when the
+  current changed. On by default; the dashed box on the FIB view is the area
+  it aligns on. Leave it on.
+- **(3) Acquisition**: whether to take SEM and FIB images between the
+  stages and a final image at the end, and with what settings. Off by
+  default here; the workflow turns it on so every lamella keeps a record.
+- **(4) Milling stages**: the list of what to mill, in order. This is where
+  the work is.
+- **(5) Run Milling** runs every ticked stage in order.
+
+## 2. Milling stages
+
+A stage is one pattern milled with one set of beam settings. A task can have
+several: a lamella is roughed at a high current, then thinned at a lower
+one, then polished at a lower one still, and each of those is a stage in the
+same task. Press **+** to add one.
+
+![One stage in the list, with its row controls](/doc/img/milling/stage-row.png)
+
+The row has the controls you change most:
+
+- **(1)** ticked stages run; untick one to skip it without deleting it.
+- **(2)** the name.
+- **(3)** the depth to mill to.
+- **(4)** the milling current.
+- **(5)** the strategy (below).
+- **(6)** remove the stage. Drag rows to reorder them.
+- **(7)** adds a stage; the eye beside it hides the patterns on the view so
+  you can see the sample underneath.
+
+Select a row and the editor below it opens with three panels.
+
+![The stage editor: milling, pattern and strategy](/doc/img/milling/stage-editor.png)
+
+### Settings
+
+**(1) Milling** is the ion beam while this stage runs, with the milling
+current in front and the rest behind the slider icon: voltage, spot size,
+dwell time, and on Thermo Fisher instruments the application file, on Tescan
+the preset. The current is the one that matters day to day: higher removes
+material faster and coarser, lower slower and finer. Use the instrument's
+own current list; the row shows only currents the beam has.
+
+### Pattern
+
+**(2) Pattern** is the shape. The list starts with the basic shapes
+(rectangle, line, circle) and goes on to the shapes lamella preparation is
+built from: trench, horseshoe, undercut, fiducial, microexpansion and the
+rest. Each has its own fields; for a rectangle they are width, height,
+depth, scan direction and cross-section.
+
+Patterns are placed relative to the FIB image: a new one appears at the beam
+centre, drawn in the stage's colour, and moves when you move it, not when
+the stage moves.
+
+![The rectangle on the FIB view, at the beam centre](/doc/img/milling/pattern-on-fib.png)
+
+To put it somewhere else, right-click there on the FIB view and choose
+**Move All Patterns Here**, or the entry naming the selected stage to move
+only that one.
+
+![Right-click on the FIB view where the pattern should go](/doc/img/milling/pattern-move-click.png)
+
+![The pattern moved to the clicked point](/doc/img/milling/pattern-moved.png)
+
+The instruction line under the milling parameters says the same thing.
+Every pattern must sit inside the FIB image; a move that would put one
+outside is refused with a message.
+
+### Strategy
+
+**(3) Strategy** is how the pattern is milled. Use **Standard**. Others are
+coming and the plugin system can add more, but Standard is what the shipped
+protocols use.
+
+## 3. Run it
+
+Press **Run Milling**. The task runs stage by stage: alignment first, if it
+is on, then the pattern. Two progress bars show which stage is running and
+how far it is, the status line says the same, and the button becomes
+**Pause Milling** and **Stop Milling**.
+
+![Milling running: progress bars, pause and stop](/doc/img/milling/milling-running.png)
+
+**Pause** holds the beam and resumes where it left off. **Stop** ends the
+task: the current pattern stops where it is, and no further stage runs. On
+the simulator each pattern takes a few seconds; on an instrument the time
+depends on the volume and the current, and the workflow shows an estimate.
+
+## 4. Afterwards
+
+Hide the patterns with the eye button and take fresh images. The rectangle
+has become a trench, visible in the FIB view where it was milled and in the
+SEM view from above.
+
+![After milling: the trench in the SEM and FIB views](/doc/img/milling/after-milling.png)
+
+![The trench in the FIB view](/doc/img/milling/after-milling-fib.png)
+
+On a real instrument this is where you check the result at a higher
+magnification before the next stage or the next site. In the AutoLamella
+workflow, each milling task on this page corresponds to one task in the
+protocol, with the same stages, patterns and settings, run for you at each
+lamella.
+
+## Next
+
+[Sample holder](/docs/sample-holder): tell fibsemOS about the shuttle or
+cassette the grids are in. Or skip ahead to the AutoLamella workflow.

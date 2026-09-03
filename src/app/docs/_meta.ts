@@ -10,6 +10,7 @@ const meta: MetaRecord = {
   "-- microscope": { type: "separator", title: "The microscope" },
   imaging: "Image acquisition",
   movement: "Stage movement",
+  milling: "Milling",
   "-- legacy": { type: "separator", title: "Older pages" },
   walkthrough: "Walkthrough (legacy)",
 };

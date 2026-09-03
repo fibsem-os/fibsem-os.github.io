@@ -1,17 +1,13 @@
 {
-  "movement": [
-    "movement-tab.png",
-    "orientation-shuttle-sem.png",
-    "orientation-shuttle-milling.png",
-    "orientation-shuttle-fib.png",
-    "orientation-compustage-sem.png",
-    "orientation-compustage-milling.png",
-    "orientation-compustage-fib.png",
-    "click-before.png",
-    "click-after.png",
-    "coincidence-before.png",
-    "coincidence-click.png",
-    "coincidence-after.png",
-    "eucentric-after-tilt.png"
+  "milling": [
+    "milling-tab.png",
+    "stage-row.png",
+    "pattern-on-fib.png",
+    "stage-editor.png",
+    "pattern-move-click.png",
+    "pattern-moved.png",
+    "milling-running.png",
+    "after-milling.png",
+    "after-milling-fib.png"
   ]
 }
