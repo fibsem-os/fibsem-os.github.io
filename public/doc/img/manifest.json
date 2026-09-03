@@ -1,16 +1,16 @@
 {
-  "imaging": [
-    "image-tab.png",
-    "first-images.png",
-    "view-toolbar.png",
-    "view-contrast.png",
-    "sem-400um.png",
-    "sem-150um.png",
-    "sem-50um.png",
-    "fib-150um.png",
-    "beam-panel.png",
-    "image-panel.png",
-    "save-settings.png",
-    "live.png"
+  "movement": [
+    "movement-tab.png",
+    "orientation-shuttle-sem.png",
+    "orientation-shuttle-milling.png",
+    "orientation-shuttle-fib.png",
+    "orientation-compustage-sem.png",
+    "orientation-compustage-milling.png",
+    "orientation-compustage-fib.png",
+    "click-before.png",
+    "click-after.png",
+    "coincidence-before.png",
+    "coincidence-click.png",
+    "coincidence-after.png"
   ]
 }
