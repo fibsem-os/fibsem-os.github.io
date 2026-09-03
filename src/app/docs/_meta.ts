@@ -7,6 +7,8 @@ const meta: MetaRecord = {
   "-- start": { type: "separator", title: "Start here" },
   installation: "Installation",
   "getting-started": "Getting started",
+  "-- microscope": { type: "separator", title: "The microscope" },
+  imaging: "Image acquisition",
   "-- legacy": { type: "separator", title: "Older pages" },
   walkthrough: "Walkthrough (legacy)",
 };
