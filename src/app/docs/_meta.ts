@@ -3,6 +3,8 @@ import type { MetaRecord } from "nextra";
 // The user guide, in reading order. Sections are separators; every entry
 // below one is a folder under src/app/docs/ with a page.mdx in it.
 const meta: MetaRecord = {
+  // no breadcrumb: it repeated the page title in small type above the heading
+  "*": { theme: { breadcrumb: false } },
   index: "Overview",
   "-- start": { type: "separator", title: "Start here" },
   installation: "Installation",
