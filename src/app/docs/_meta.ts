@@ -12,6 +12,7 @@ const meta: MetaRecord = {
   movement: "Stage movement",
   milling: "Milling",
   "sample-holder": "Sample holder",
+  fluorescence: "Fluorescence imaging (Arctis)",
   "-- legacy": { type: "separator", title: "Older pages" },
   walkthrough: "Walkthrough (legacy)",
 };

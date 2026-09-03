@@ -1,15 +1,19 @@
 {
-  "sample-holder": [
-    "sample-tab.png",
-    "grids-named.png",
-    "calibrate-1-holder.png",
-    "calibrate-2-orientation.png",
-    "calibrate-3-slot-1.png",
-    "calibrate-4-slot-2.png",
-    "calibrate-5-review.png",
-    "slots-calibrated.png",
-    "at-slot-1.png",
-    "at-slot-2.png",
-    "sample-tab-arctis.png"
+  "fluorescence": [
+    "fluorescence-tab.png",
+    "fluorescence-buttons.png",
+    "objective-inserted.png",
+    "channels.png",
+    "fm-view-live.png",
+    "viewer.png",
+    "composite.png",
+    "channel-reflection.png",
+    "channel-dapi.png",
+    "channel-gfp.png",
+    "channel-mcherry.png",
+    "fm-view-toolbar.png",
+    "fm-layers-panel.png",
+    "z-parameters.png",
+    "z-stack.png"
   ]
 }
