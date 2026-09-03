@@ -40,21 +40,28 @@ mostly about: double-click to move, Alt + double-click to move vertically.
 ## 2. The three orientations
 
 A FIB-SEM has two beams at a fixed angle to each other, 52° on Thermo Fisher
-instruments, and a stage that tilts. Almost everything you do wants the
-sample facing one beam or the other, so fibsemOS names three stage poses and
-lets you move between them with one button.
+instruments, and a stage that rotates and tilts. Different tasks need the
+sample viewed from particular directions, and the stage geometry and the
+pre-tilt of the holder turn those into a few specific stage poses the
+instrument is used in. fibsemOS names three of them and moves to each with
+one button.
 
-- **SEM orientation**: the sample is flat, square to the electron beam. This
-  is where you take overview images and pick positions.
-- **FIB orientation**: the sample is square to the ion beam. Used to look at a
-  lamella face-on, and by the workflow to set up a milling position.
+- **SEM orientation**, sometimes called the mapping position: the sample is
+  flat, square to the electron beam. Used for overview acquisition and for
+  picking positions.
+- **FIB orientation**, sometimes called the trenching position: the sample is
+  square to the ion beam. Used for trench milling on high-pressure-frozen
+  samples, and to look at a lamella face-on.
 - **MILLING orientation**: the sample is tilted so the ion beam meets it at a
-  shallow angle, the milling angle. This is where lamellae are milled.
+  shallow angle, the milling angle. Used for milling lamellae.
 
-What those poses are in stage coordinates depends on how the sample is
-mounted, which is why Guided Setup asked. The diagrams below are drawn from
-the shipped configurations for the two cases; the app draws the same picture
-on the stage step of Guided Setup.
+What those poses are in stage coordinates is set by the two numbers from the
+stage step of [Guided Setup](/docs/getting-started#stage-configuration): the
+**reference rotation** is the stage rotation of the SEM orientation, and the
+**shuttle pre-tilt** is its stage tilt. The other two orientations are derived
+from them. The diagrams below are drawn from the shipped configurations for
+the two kinds of stage; the app draws the same picture on that step of
+Guided Setup.
 
 ### A pre-tilted shuttle (Aquilos, Hydra)
 
