@@ -120,6 +120,10 @@ task: the current pattern stops where it is, and no further stage runs. On
 the simulator each pattern takes a few seconds; on an instrument the time
 depends on the volume and the current, and the workflow shows an estimate.
 
+When the task ends, whether it finished or was stopped, the ion beam is set
+back to the current and voltage it had before milling started, so the next
+image is taken at the imaging current and not the milling one.
+
 ## 4. Afterwards
 
 Hide the patterns with the eye button and take fresh images. The rectangle
