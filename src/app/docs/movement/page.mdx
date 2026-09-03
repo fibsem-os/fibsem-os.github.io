@@ -188,15 +188,12 @@ well:
 
 ![After tilting to the MILLING orientation: the cross has moved off centre](/doc/img/movement/eucentric-after-tilt.png)
 
-fibsemOS does not try to find the eucentric height for you. Doing it well
-means tilting back and forth, measuring the shift each time and adjusting z
-until it stops, which is slow, needs a feature the microscope can find at
-every tilt, and on a compustage is harder still. Instead it re-centres after
-a tilt: the workflow moves to the milling angle, takes an image, and moves the
-feature back under the beam with a stable move, then restores coincidence
-there. That is why every lamella has a milling position recorded at its own
-tilt, rather than one position for all orientations. By hand, do the same:
-tilt, then double-click the feature to bring it back.
+fibsemOS does not set the eucentric height. Finding it means tilting,
+measuring the shift and adjusting z several times over, and it is not needed
+for what the workflow does. After a tilt the workflow takes an image,
+re-centres the feature with a stable move and restores coincidence there,
+which is why each lamella keeps a milling position recorded at its own tilt.
+By hand, do the same: tilt, then double-click the feature to bring it back.
 
 ## Next
 
