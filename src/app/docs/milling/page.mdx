@@ -84,11 +84,25 @@ depth, scan direction and cross-section.
 
 Patterns are placed relative to the FIB image: a new one appears at the beam
 centre, drawn in the stage's colour, and moves when you move it, not when
-the stage moves.
+the stage moves. The green dashed box is not a pattern: it is the alignment
+area, the part of the image the drift correction compares between images,
+and it is only drawn while Alignment is on.
 
 ![The rectangle on the FIB view, at the beam centre](/doc/img/milling/pattern-on-fib.png)
 
-To put it somewhere else, right-click there on the FIB view and choose
+A few of the shapes, each at its shipped size:
+
+| Rectangle | Trench | Fiducial | Micro-expansion |
+| --- | --- | --- | --- |
+| ![Rectangle](/doc/img/milling/pattern-rectangle.png) | ![Trench](/doc/img/milling/pattern-trench.png) | ![Fiducial](/doc/img/milling/pattern-fiducial.png) | ![Micro-expansion](/doc/img/milling/pattern-microexpansion.png) |
+
+A trench is two rectangles with the lamella left between them; a fiducial
+is a cross the alignment can lock on to; micro-expansion cuts are the two
+lines beside a lamella that relieve stress in the film so it does not bend
+while thinning. Each of these is one stage's pattern; a real lamella task
+combines several, and the shipped protocols already do.
+
+To put a pattern somewhere else, right-click there on the FIB view and choose
 **Move All Patterns Here**, or the entry naming the selected stage to move
 only that one.
 
@@ -105,6 +119,20 @@ outside is refused with a message.
 **(3) Strategy** is how the pattern is milled. Use **Standard**. Others are
 coming and the plugin system can add more, but Standard is what the shipped
 protocols use.
+
+### More than one stage
+
+Add a second stage and the task mills them in list order, each with its own
+pattern and current, and the view shows every stage's pattern in its own
+colour. Here the first stage is a trench and the second the micro-expansion
+cuts beside it.
+
+![Two stages in the list: Trench, then Micro-expansion](/doc/img/milling/multi-stage-list.png)
+
+![Both stages' patterns on the FIB view](/doc/img/milling/multi-stage-fib.png)
+
+This is the shape of every lamella task in the shipped protocols: a handful
+of stages at decreasing currents, sharing one placement.
 
 ## 3. Run it
 
