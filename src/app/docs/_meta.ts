@@ -7,7 +7,7 @@ const meta: MetaRecord = {
   "-- start": { type: "separator", title: "Start here" },
   installation: "Installation",
   "getting-started": "Getting started",
-  "-- microscope": { type: "separator", title: "The microscope" },
+  "-- microscope": { type: "separator", title: "Microscope Control" },
   imaging: "Image acquisition",
   movement: "Stage movement",
   milling: "Milling",
