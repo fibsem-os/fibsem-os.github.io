@@ -1,22 +1,15 @@
 {
-  "milling": [
-    "milling-tab.png",
-    "stage-row.png",
-    "pattern-on-fib.png",
-    "pattern-rectangle.png",
-    "pattern-trench.png",
-    "pattern-fiducial.png",
-    "pattern-microexpansion.png",
-    "multi-stage-list.png",
-    "multi-stage-fib.png",
-    "stage-editor.png",
-    "pattern-move-click.png",
-    "pattern-moved.png",
-    "milling-running.png",
-    "after-milling.png",
-    "after-milling-fib.png",
-    "multi-stage-before.png",
-    "multi-stage-after.png",
-    "multi-stage-after-window.png"
+  "sample-holder": [
+    "sample-tab.png",
+    "grids-named.png",
+    "calibrate-1-holder.png",
+    "calibrate-2-orientation.png",
+    "calibrate-3-slot-1.png",
+    "calibrate-4-slot-2.png",
+    "calibrate-5-review.png",
+    "slots-calibrated.png",
+    "at-slot-1.png",
+    "at-slot-2.png",
+    "sample-tab-arctis.png"
   ]
 }

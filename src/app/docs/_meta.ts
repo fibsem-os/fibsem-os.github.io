@@ -11,6 +11,7 @@ const meta: MetaRecord = {
   imaging: "Image acquisition",
   movement: "Stage movement",
   milling: "Milling",
+  "sample-holder": "Sample holder",
   "-- legacy": { type: "separator", title: "Older pages" },
   walkthrough: "Walkthrough (legacy)",
 };
