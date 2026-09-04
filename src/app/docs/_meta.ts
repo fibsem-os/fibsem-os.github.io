@@ -16,6 +16,7 @@ const meta: MetaRecord = {
   "sample-holder": "Sample holder",
   fluorescence: "Fluorescence imaging",
   "-- autolamella": { type: "separator", title: "AutoLamella" },
+  "first-lamella": "Your first lamella",
   experiments: "Experiments",
   protocols: "Protocols",
   overview: "Overview acquisition",

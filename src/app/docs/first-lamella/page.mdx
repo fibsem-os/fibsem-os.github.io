@@ -1,0 +1,86 @@
+---
+title: Your first lamella
+---
+
+# Your first lamella
+
+The whole path from a connected microscope to a polished lamella, in one
+run, on the simulator or on an instrument. Each step links to the page that
+explains it; read those when a step needs more than a line.
+
+## Before you start
+
+- fibsemOS is [installed](/docs/installation) and
+  [connected](/docs/getting-started). On a laptop, use the simulator.
+- On an instrument: the grid is loaded, the beams are on, and you have
+  taken an [image](/docs/imaging) of it.
+
+## 1. Create an experiment
+
+**Create Experiment** at the top right. Name it, pick the experiments
+folder, leave the default on-grid protocol selected, and create. The
+AutoLamella tabs wake up. [Experiments](/docs/experiments)
+
+![Create Experiment](/doc/img/experiments/create-experiment.png)
+
+## 2. Image the grid
+
+Move to the SEM orientation and put the surface in coincidence
+([Movement](/docs/movement)). On the **Overview** tab, choose the electron
+beam, 3 × 3 tiles at 400 µm, and **Acquire Overview**.
+[Overview acquisition](/docs/overview)
+
+![The SEM overview](/doc/img/overview/sem-overview.png)
+
+## 3. Mark the lamellae
+
+Right-click a good square on the overview and choose **Add New Position
+Here**. Two or three positions is plenty for a first run.
+[Overview acquisition](/docs/overview#3-mark-lamella-positions)
+
+![Positions marked](/doc/img/overview/positions-marked.png)
+
+## 4. Check the protocol
+
+On the **Protocol** tab, look at Rough Milling and Polishing: the currents
+and the milling angle should be ones your instrument uses. On the
+simulator, leave everything as it is. [Protocols](/docs/protocols)
+
+## 5. Run the first two tasks, supervised
+
+On the **Workflow** tab tick your lamellae and the first two tasks, **Setup
+Lamella Position** and **Mill Fiducial**, leave both supervised, and press
+**Run Workflow**. Confirm the preflight. [Workflows](/docs/workflows)
+
+![Workflow tab, ready to run](/doc/img/workflows/workflow-tab.png)
+
+When **Attention Required** lights up, go to the Experiment tab and
+answer: **Tilt** to the milling angle, double-click the feature to centre
+it and **Continue**, then **Run Milling** for the fiducial and **Continue**
+once you are happy with it. Each lamella in turn.
+
+![A question during the run](/doc/img/workflows/prompt-confirm.png)
+
+## 6. Rough milling and polishing
+
+Back on the Workflow tab, tick **Rough Milling** and **Polishing**, and
+run. Supervised the first time: at each milling prompt check the patterns
+sit where you want on the FIB view, then **Run Milling** and **Continue**.
+On the simulator each stage takes a few seconds; on an instrument, minutes
+to tens of minutes per lamella.
+
+![Milling prompt](/doc/img/workflows/prompt-runmillingtask.png)
+
+## 7. Look at what you made
+
+The summary at the end lists every task and its outcome. The
+**Lamella** tab's Review shows each lamella's images task by task, and the
+FIB view shows the finished lamella. [Lamella](/docs/lamella)
+
+![The workflow summary](/doc/img/workflows/workflow-summary.png)
+
+## Next time
+
+Turn supervision off for Rough Milling and Polishing, and let the run go
+unattended. The [Tasks](/docs/tasks) page says what each task does and
+which to keep an eye on.
