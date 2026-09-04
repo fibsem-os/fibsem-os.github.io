@@ -91,15 +91,45 @@ corners if it should cover something else, and press **Continue**.
 The **Supervised** badge in the status bar shows the run's mode; the same
 questions are answered automatically in an unsupervised run.
 
-## 4. Stopping
+## 4. The queue
 
-**Stop Workflow** in the status bar stops the run. The task in progress is
-brought to a safe stop, the beams are left as they were for imaging, and
-the lamella it was working on records the task as cancelled rather than
-failed. Nothing already done is lost: the lamellae keep their state, and a
-later run picks up from the tasks that have not completed.
+While a run is going, the right side of the Workflow tab shows the queue:
+every lamella-and-task pair the run will do, in order, with the one in
+progress, the ones done, and the ones still to come.
 
-## 5. Afterwards
+![The queue during a run](/doc/img/workflows/queue-running.png)
+
+The queue can be changed while it runs. Right-click an item for its
+actions:
+
+![A queued item's actions](/doc/img/workflows/queue-row-menu.png)
+
+- **Move up** and **Move down** shift a pending item one place; **Run
+  next** brings it to the front. Only items that have not started can move.
+- **Remove from queue** drops a pending item. The lamella records the task
+  as removed, not failed, and it can be queued again later.
+- **Run again**, on a finished item, queues the same task on the same
+  lamella once more. This is how a task is re-run: after adjusting a
+  pattern on the Lamella tab, say, or after a milling result you are not
+  happy with.
+- **Stop task**, on the item in progress, stops that task only. It is
+  marked cancelled and the run carries on with the next item.
+
+To add work to a running queue, tick lamellae and tasks on the left as
+usual and press **Add to Queue** at the top of the queue. A dialog shows
+what is being added, what is already queued, whether it runs next or at the
+end, and how much time it adds. The queue's header says how much work is
+left and whether it is waiting for you.
+
+## 5. Stopping
+
+**Stop Workflow** in the status bar stops the whole run. The task in
+progress is brought to a safe stop, the beams are set back to their imaging
+settings, and the lamella it was working on records the task as cancelled
+rather than failed. Nothing already done is lost: the lamellae keep their
+state, and a later run picks up from the tasks that have not completed.
+
+## 6. Afterwards
 
 When the run ends a summary lists every task it ran, per lamella, with its
 outcome and how long it took.
