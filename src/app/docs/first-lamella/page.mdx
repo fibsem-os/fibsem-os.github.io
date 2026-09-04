@@ -34,11 +34,11 @@ beam, 3 × 3 tiles at 400 µm, and **Acquire Overview**.
 
 ## 3. Mark the lamellae
 
-Right-click a good square on the overview and choose **Add New Position
-Here**. Two or three positions is plenty for a first run.
+Find cells sitting on film, away from the grid bars, and right-click each
+one: **Add New Position Here**. Two or three is plenty for a first run.
 [Overview acquisition](/docs/overview#3-mark-lamella-positions)
 
-![Positions marked](/doc/img/overview/positions-marked.png)
+![Positions marked on cells](/doc/img/overview/positions-marked.png)
 
 ## 4. Check the protocol
 
@@ -46,7 +46,7 @@ On the **Protocol** tab, look at Rough Milling and Polishing: the currents
 and the milling angle should be ones your instrument uses. On the
 simulator, leave everything as it is. [Protocols](/docs/protocols)
 
-## 5. Run the first two tasks, supervised
+## 5. Set up each lamella
 
 On the **Workflow** tab tick your lamellae and the first two tasks, **Setup
 Lamella Position** and **Mill Fiducial**, leave both supervised, and press
@@ -55,29 +55,52 @@ Lamella Position** and **Mill Fiducial**, leave both supervised, and press
 ![Workflow tab, ready to run](/doc/img/workflows/workflow-tab.png)
 
 When **Attention Required** lights up, go to the Experiment tab and
-answer: **Tilt** to the milling angle, double-click the feature to centre
-it and **Continue**, then **Run Milling** for the fiducial and **Continue**
-once you are happy with it. Each lamella in turn.
+answer. Setup Lamella Position asks to **Tilt** to the milling angle, then
+to double-click the cell to centre it and **Continue**:
 
-![A question during the run](/doc/img/workflows/prompt-confirm.png)
+![Tilt to the milling angle](/doc/img/workflows/prompt-confirm.png)
 
-## 6. Rough milling and polishing
+Mill Fiducial shows the fiducial pattern beside the cell; move it if it
+sits on something, **Run Milling**, and **Continue** when it looks right.
+Then it asks you to check the alignment area, the dashed box the later
+tasks align to. Drag it if needed and **Continue**:
 
-Back on the Workflow tab, tick **Rough Milling** and **Polishing**, and
+![The alignment area after the fiducial](/doc/img/workflows/prompt-editalignmentarea.png)
+
+Each lamella takes its turn, and a summary appears at the end.
+
+## 6. Look at what you have set up
+
+On the **Lamella** tab, click each card. The FIB image is the lamella at
+its milling position with the fiducial milled, and the task list shows the
+two tasks done. Select **Rough Milling** to see where its patterns will
+land on this image; this is the moment to move a pattern that is off.
+[Lamella](/docs/lamella)
+
+![A lamella after setup and fiducial](/doc/img/workflows/lamella-after-fiducial.png)
+
+## 7. Rough milling and polishing
+
+Back on the **Workflow** tab, tick **Rough Milling** and **Polishing**, and
 run. Supervised the first time: at each milling prompt check the patterns
 sit where you want on the FIB view, then **Run Milling** and **Continue**.
 On the simulator each stage takes a few seconds; on an instrument, minutes
 to tens of minutes per lamella.
 
-![Milling prompt](/doc/img/workflows/prompt-runmillingtask.png)
+![Rough milling, waiting to run](/doc/img/workflows/prompt-runmillingtask-rough-milling.png)
 
-## 7. Look at what you made
+## 8. Look at what you have made
 
-The summary at the end lists every task and its outcome. The
-**Lamella** tab's Review shows each lamella's images task by task, and the
-FIB view shows the finished lamella. [Lamella](/docs/lamella)
+The summary lists every task and its outcome. On the **Lamella** tab the
+FIB image now shows the finished lamella, and the **Review** sub-tab shows
+each task's images in order, which is where you judge the result.
 
-![The workflow summary](/doc/img/workflows/workflow-summary.png)
+![A lamella after polishing](/doc/img/workflows/lamella-after-polishing.png)
+
+Polishing is the step most likely to need tuning for your sample: the
+final thickness, the current and how long it runs. Adjust it on the
+Protocol tab, apply to existing lamellae, and run Polishing again on the
+ones that need it.
 
 ## Next time
 
