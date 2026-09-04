@@ -20,6 +20,7 @@ const meta: MetaRecord = {
   protocols: "Protocols",
   overview: "Overview acquisition",
   lamella: "Lamella",
+  tasks: "Tasks",
   "-- legacy": { type: "separator", title: "Older pages" },
   walkthrough: "Walkthrough (legacy)",
 };

@@ -1,9 +1,7 @@
 {
-  "lamella": [
-    "experiment-tab.png",
-    "lamella-tab.png",
-    "card-actions.png",
-    "card.png",
-    "review-tab.png"
+  "tasks": [
+    "add-task.png",
+    "task-types.png",
+    "starting-workflow.png"
   ]
 }
