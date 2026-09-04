@@ -1,19 +1,7 @@
 {
-  "fluorescence": [
-    "fluorescence-tab.png",
-    "fluorescence-buttons.png",
-    "objective-inserted.png",
-    "channels.png",
-    "fm-view-live.png",
-    "viewer.png",
-    "composite.png",
-    "channel-reflection.png",
-    "channel-dapi.png",
-    "channel-gfp.png",
-    "channel-mcherry.png",
-    "fm-view-toolbar.png",
-    "fm-layers-panel.png",
-    "z-parameters.png",
-    "z-stack.png"
+  "experiments": [
+    "create-experiment.png",
+    "experiment-open.png",
+    "experiment-tab.png"
   ]
 }

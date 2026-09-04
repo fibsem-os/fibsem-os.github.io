@@ -15,6 +15,8 @@ const meta: MetaRecord = {
   milling: "Milling",
   "sample-holder": "Sample holder",
   fluorescence: "Fluorescence imaging",
+  "-- autolamella": { type: "separator", title: "AutoLamella" },
+  experiments: "Experiments",
   "-- legacy": { type: "separator", title: "Older pages" },
   walkthrough: "Walkthrough (legacy)",
 };
