@@ -17,6 +17,7 @@ const meta: MetaRecord = {
   fluorescence: "Fluorescence imaging",
   "-- autolamella": { type: "separator", title: "AutoLamella" },
   experiments: "Experiments",
+  protocols: "Protocols",
   "-- legacy": { type: "separator", title: "Older pages" },
   walkthrough: "Walkthrough (legacy)",
 };

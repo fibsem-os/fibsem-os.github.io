@@ -1,7 +1,7 @@
 {
-  "experiments": [
-    "create-experiment.png",
-    "experiment-open.png",
-    "experiment-tab.png"
+  "protocols": [
+    "protocol-tab.png",
+    "file-menu.png",
+    "global-edit.png"
   ]
 }
