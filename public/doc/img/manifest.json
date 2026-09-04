@@ -1,7 +1,13 @@
 {
-  "tasks": [
-    "add-task.png",
-    "task-types.png",
-    "starting-workflow.png"
+  "workflows": [
+    "workflow-tab.png",
+    "task-row.png",
+    "attention-required.png",
+    "prompt-confirm.png",
+    "prompt-runmillingtask.png",
+    "prompt-editalignmentarea.png",
+    "workflow-summary.png",
+    "workflow-finished.png",
+    "grids-view.png"
   ]
 }

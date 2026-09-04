@@ -21,6 +21,9 @@ const meta: MetaRecord = {
   overview: "Overview acquisition",
   lamella: "Lamella",
   tasks: "Tasks",
+  workflows: "Workflows",
+  // built and reviewable by URL, hidden until features.grid_workflow is on by default
+  "grid-workflow": { title: "Grid workflow", display: "hidden" },
   "-- legacy": { type: "separator", title: "Older pages" },
   walkthrough: "Walkthrough (legacy)",
 };
