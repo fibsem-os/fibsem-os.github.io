@@ -75,10 +75,18 @@ open the correlation tool, and refresh the positions.
 
 Editing here changes one lamella. Editing on the Protocol tab changes the
 protocol, which reaches lamellae created afterwards, or existing ones when
-you press Apply Config to Existing Lamella there. So the usual order is:
-get the protocol right first, mark the positions, then adjust individual
-lamellae, since applying the protocol afterwards would overwrite those
-adjustments for the task applied.
+you press Apply Config to Existing Lamella there.
+
+The recommended way to use the two is to tune on one lamella first. Run a
+task on a single lamella, adjust its patterns, currents and parameters here
+until the result is right, then press **(4)**, which opens a dialog to
+choose which of the other lamellae in the experiment receive this
+lamella's task configuration.
+This is how to handle a new sample type or a different workflow: the
+protocol is a starting point, one lamella is where it gets tuned, and the
+others inherit the tuning. Applying the protocol to existing lamellae
+afterwards would overwrite that tuning for the task applied, so do it the
+other way round.
 
 The one thing that is always per lamella is where its patterns sit on its
 image: that is never copied from the protocol or from another lamella.
