@@ -18,6 +18,7 @@ const meta: MetaRecord = {
   "-- autolamella": { type: "separator", title: "AutoLamella" },
   experiments: "Experiments",
   protocols: "Protocols",
+  overview: "Overview acquisition",
   "-- legacy": { type: "separator", title: "Older pages" },
   walkthrough: "Walkthrough (legacy)",
 };

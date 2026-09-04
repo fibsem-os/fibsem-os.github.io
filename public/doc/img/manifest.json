@@ -1,7 +1,11 @@
 {
-  "protocols": [
-    "protocol-tab.png",
-    "file-menu.png",
-    "global-edit.png"
+  "overview": [
+    "overview-tab.png",
+    "sem-overview.png",
+    "positions-marked.png",
+    "fib-overview-sem-orientation.png",
+    "fib-overview-milling-orientation.png",
+    "view-strip.png",
+    "fm-overview-tab.png"
   ]
 }
