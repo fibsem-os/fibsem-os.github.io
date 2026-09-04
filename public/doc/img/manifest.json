@@ -1,11 +1,9 @@
 {
-  "overview": [
-    "overview-tab.png",
-    "sem-overview.png",
-    "positions-marked.png",
-    "fib-overview-sem-orientation.png",
-    "fib-overview-milling-orientation.png",
-    "view-strip.png",
-    "fm-overview-tab.png"
+  "lamella": [
+    "experiment-tab.png",
+    "lamella-tab.png",
+    "card-actions.png",
+    "card.png",
+    "review-tab.png"
   ]
 }
