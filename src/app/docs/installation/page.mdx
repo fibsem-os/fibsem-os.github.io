@@ -8,6 +8,10 @@ By the end of this page fibsemOS is installed in its own Python environment,
 the application opens from a desktop shortcut, and you know which vendor
 software your microscope needs on top.
 
+The same guide, without the screenshots, ships with the code as
+[INSTALLATION.md](https://github.com/fibsem-os/fibsem-os/blob/main/INSTALLATION.md),
+for machines without a browser.
+
 ## Before you start
 
 - A computer running Windows, Linux or macOS. On a microscope, this is
@@ -47,7 +51,30 @@ pip install -e ".[ui]"
 ```
 
 Either way, the `[ui]` extra is what installs the application windows. Leave
-it off only for a scripting-only install with no graphical interface.
+it off only for a scripting-only install with no graphical interface. Image
+labelling (`fibsem_label`) draws in napari, which is not part of `[ui]`; add
+the `[labelling]` extra for it.
+
+### Offline installation
+
+For a computer with no internet connection, download the packages on a
+connected computer with the same Python version and carry them over, for
+example on a USB stick.
+
+On the connected computer:
+
+```bash
+mkdir pkg
+cd pkg
+pip download "fibsem[ui]"
+```
+
+On the offline computer, from the copied `pkg` directory, with the `fibsem`
+environment active:
+
+```bash
+pip install --no-index --find-links . "fibsem[ui]"
+```
 
 ## 3. Open the application
 
@@ -123,11 +150,18 @@ installed.
 
 ### Tescan
 
-Run the Tescan Automation SDK installer from Tescan. When it asks
-which Python interpreter to install into, choose the one in the `fibsem`
+Run the Tescan Automation SDK installer from Tescan. When it asks which
+Python interpreter to install into, choose the one in the `fibsem`
 environment (`where python` with the environment active shows its path). If
 the installer put the packages elsewhere, copy every folder beginning with
-`tescan` from that `site-packages` into the `fibsem` environment's.
+`tescan`, `PySide6` and `shiboken` from that `site-packages` into the
+`fibsem` environment's.
+
+To check, with the environment active:
+
+```bash
+python -c "from tescanautomation import Automation; print('Tescan SDK found')"
+```
 
 If you finish [Getting started](/docs/getting-started) and the connection
 fails with a message about a missing module, this is the step to come back to.
@@ -138,8 +172,9 @@ fails with a message about a missing module, this is the step to come back to.
 then `uv pip install "fibsem[ui]"` in the activated environment does the same
 job, faster. uv also works inside a conda environment.
 
-**venv.** Python's own `python -m venv fibsem`, then activate it and run the
-`pip install` above.
+**venv.** Python's own `python -m venv fibsem`, then activate it
+(`fibsem\Scripts\activate` on Windows, `source fibsem/bin/activate`
+elsewhere) and run the `pip install` above.
 
 **Manual shortcut.** If the Tools menu is not an option, make a script that
 activates the environment and runs `fibsem-autolamella-ui`, and create a
