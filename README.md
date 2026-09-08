@@ -39,3 +39,13 @@ Alternatively, open a PR, place the media in `public` and add yourself to the [c
 ```
 
 Thank you!
+
+## Developer documentation
+
+The pages under `/docs/developers/` are not in this repository. They are copied
+out of a [fibsem-os](https://github.com/fibsem-os/fibsem-os) checkout by
+`scripts/sync-developer-docs.mjs` before every build (`yarn build` runs it),
+with relative links rewritten to site routes and GitHub links. The deploy
+workflow checks fibsem-os out beside the site; locally, put a checkout at
+`../fibsem-os` or point `FIBSEM_OS_DIR` at one. With neither, the build
+skips those pages with a warning. Edit the pages in fibsem-os, not here.

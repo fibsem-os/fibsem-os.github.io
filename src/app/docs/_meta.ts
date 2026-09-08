@@ -25,6 +25,9 @@ const meta: MetaRecord = {
   workflows: "Workflows",
   // built and reviewable by URL, hidden until features.grid_workflow is on by default
   "grid-workflow": { title: "Grid workflow", display: "hidden" },
+  "-- developers": { type: "separator", title: "Developers" },
+  // generated from the fibsem-os checkout by scripts/sync-developer-docs.mjs
+  developers: "Developer documentation",
 };
 
 export default meta;

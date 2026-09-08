@@ -45,3 +45,8 @@ q_*.md
 
 public/_pagefind/
 out/_pagefind/
+
+# written from the fibsem-os checkout by scripts/sync-developer-docs.mjs
+src/app/docs/developers/**/page.mdx
+src/app/docs/developers/page.mdx
+public/doc/img/developers/

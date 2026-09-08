@@ -5,6 +5,10 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
+env:
+  # the fibsem-os ref the developer pages are taken from (and their GitHub links point at)
+  FIBSEM_OS_REF: main
+
 permissions:
   contents: read
   pages: write
@@ -21,6 +25,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # The developer pages are copied out of fibsem-os at build time
+      # (scripts/sync-developer-docs.mjs); the repository is their source of truth.
+      - name: Checkout fibsem-os
+        uses: actions/checkout@v4
+        with:
+          repository: fibsem-os/fibsem-os
+          ref: ${{ env.FIBSEM_OS_REF }}
+          path: fibsem-os
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -33,8 +46,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Build 
+      - name: Build
         run: yarn build
+        env:
+          FIBSEM_OS_DIR: ${{ github.workspace }}/fibsem-os
+          FIBSEM_OS_REF: ${{ env.FIBSEM_OS_REF }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
