@@ -227,8 +227,7 @@ export default function Home() {
 
       <section className="pt-16 pb-10 px-4">
         <div className="max-w-5xl mx-auto">
-          <Logo className="h-12 md:h-16 text-gray-900 dark:text-gray-100" />
-          <h1 className="mt-8 text-2xl md:text-4xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 max-w-3xl">
+          <h1 className="text-2xl md:text-4xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 max-w-3xl">
             {CONTENT.hero.title}
           </h1>
           <p className="mt-4 text-gray-600 dark:text-gray-400 text-base md:text-lg max-w-2xl leading-relaxed">

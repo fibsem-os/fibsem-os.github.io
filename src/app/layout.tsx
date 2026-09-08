@@ -10,12 +10,12 @@ export const metadata: Metadata = {
     "Open-source platform unifying microscope drivers, automating complex workflows, and enabling reproducible cryo-electron tomography sample preparation.",
   icons: {
     icon: [
-      { url: "/favicons/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicons/favicon.svg?v=2", type: "image/svg+xml" },
+      { url: "/favicons/favicon-32x32.png?v=2", sizes: "32x32", type: "image/png" },
+      { url: "/favicons/favicon-16x16.png?v=2", sizes: "16x16", type: "image/png" },
     ],
-    shortcut: "/favicons/favicon.ico",
-    apple: "/favicons/apple-touch-icon.png",
+    shortcut: "/favicons/favicon.ico?v=2",
+    apple: "/favicons/apple-touch-icon.png?v=2",
   },
   manifest: "/favicons/site.webmanifest",
   metadataBase: new URL("https://www.fibsemos.org"),
