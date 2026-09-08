@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "sync-docs": "node scripts/sync-developer-docs.mjs",
+    "prebuild": "node scripts/sync-developer-docs.mjs",
     "build": "next build --webpack",
     "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
     "start": "next start",
