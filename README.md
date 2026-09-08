@@ -42,7 +42,7 @@ Thank you!
 
 ## Developer documentation
 
-The pages under `/docs/developers/` are not in this repository. They are copied
+The pages under the "Developers" heading of the docs sidebar are not in this repository. They are copied
 out of a [fibsem-os](https://github.com/fibsem-os/fibsem-os) checkout by
 `scripts/sync-developer-docs.mjs` before every build (`yarn build` runs it),
 with relative links rewritten to site routes and GitHub links. The deploy

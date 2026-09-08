@@ -5,8 +5,9 @@
 // they name modules that get renamed. So the repository stays the source of
 // truth and this script, run before every build, writes the site's copies:
 //
-//   src/app/docs/developers/<slug>/page.mdx   (gitignored)
-//   public/doc/img/developers/<image>          (gitignored)
+//   src/app/docs/<slug>/page.mdx        (gitignored; flat, under the sidebar's
+//                                        "Developers" separator, no folder)
+//   public/doc/img/developers/<image>    (gitignored)
 //
 // Relative links between the pages become site routes, links into the code
 // become GitHub links at the ref the docs came from, and the few characters
@@ -28,19 +29,20 @@ const source = resolve(explicit || join(site, "..", "fibsem-os"));
 const ref = process.env.FIBSEM_OS_REF || "main";
 const github = `https://github.com/fibsem-os/fibsem-os/blob/${ref}`;
 
-// slug -> source file (repo-relative) and sidebar title, in reading order
-const PAGES = [
-  ["index", "docs/developers/README.md", "Developer documentation"],
-  ["getting-started", "docs/developers/getting-started.md", "Getting started"],
+// slug -> source file (repo-relative) and page title, in reading order. The
+// slugs are also the entries under "Developers" in src/app/docs/_meta.ts.
+export const PAGES = [
+  ["developers", "docs/developers/README.md", "Developer documentation"],
+  ["developer-setup", "docs/developers/getting-started.md", "Getting started as a developer"],
   ["contributing", "CONTRIBUTING.md", "Contributing"],
   ["extending", "docs/developers/extending.md", "Extending fibsemOS"],
   ["scripting", "SCRIPTING.md", "Scripting experiments"],
   ["simulator", "docs/simulator.md", "The simulator"],
   ["screenshot-harness", "docs/developers/screenshot-harness.md", "The screenshot harness"],
 ];
-const routeOf = new Map(PAGES.map(([slug, src]) => [src, slug === "index" ? "/docs/developers/" : `/docs/developers/${slug}/`]));
+const routeOf = new Map(PAGES.map(([slug, src]) => [src, `/docs/${slug}/`]));
 
-const pagesDir = join(site, "src", "app", "docs", "developers");
+const pagesDir = join(site, "src", "app", "docs");
 const imgDir = join(site, "public", "doc", "img", "developers");
 const IMAGE = new Set([".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp"]);
 
@@ -103,7 +105,7 @@ for (const [slug, src, title] of PAGES) {
   // the note goes under the H1 so the page still opens with its title
   const body = md.replace(/^(# .*\n\n?)/, (h1) => `${h1}${note}`);
   const text = `---\ntitle: ${JSON.stringify(title)}\n---\n\n${body}`;
-  const dest = slug === "index" ? join(pagesDir, "page.mdx") : join(pagesDir, slug, "page.mdx");
+  const dest = join(pagesDir, slug, "page.mdx");
   mkdirSync(dirname(dest), { recursive: true });
   writeFileSync(dest, text);
   written += 1;

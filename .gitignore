@@ -47,6 +47,11 @@ public/_pagefind/
 out/_pagefind/
 
 # written from the fibsem-os checkout by scripts/sync-developer-docs.mjs
-src/app/docs/developers/**/page.mdx
-src/app/docs/developers/page.mdx
+src/app/docs/developers/
+src/app/docs/developer-setup/
+src/app/docs/contributing/
+src/app/docs/extending/
+src/app/docs/scripting/
+src/app/docs/simulator/
+src/app/docs/screenshot-harness/
 public/doc/img/developers/
