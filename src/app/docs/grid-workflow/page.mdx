@@ -1,0 +1,52 @@
+---
+title: Grid workflow
+---
+
+# Grid workflow
+
+This page describes a feature that is switched off by default. It is
+written ahead of the switch so that it is ready when the feature is, and
+it may change before then.
+
+By the end of this page you know what a grid task is, how it differs from
+the lamella tasks on the other pages, and how to run the protocol's grid
+tasks across every grid in the holder.
+
+## Grid tasks
+
+A lamella task is done to one lamella. A **grid task** is done to a whole
+grid: it needs the grid's slot to be calibrated on the
+[Sample holder](/docs/sample-holder) page, drives to that slot, and works
+from there. Two ship:
+
+- **Beam overview**: a tiled SEM or FIB overview of the grid, as the
+  [Overview](/docs/overview) tab takes by hand, saved with the experiment
+  and listed on the Overview tab.
+- **Fluorescence overview** (Arctis): moves to the fluorescence microscope,
+  inserts the objective, acquires a tiled fluorescence overview, and puts
+  everything back.
+
+Grid tasks live in their own section of the protocol, under grid tasks,
+and are edited on the **Grid** sub-tab of the Protocol tab.
+
+## The Grids view
+
+The Workflow tab has a second view beside Lamella: **Grids**.
+
+![The Grids view on the Workflow tab](/doc/img/workflows/grids-view.png)
+
+It lists the grids the holder knows, each with its slot and whether it is
+calibrated, and the grid tasks the protocol has. Tick grids and tasks and
+press **Run Workflow**, as for lamellae; the run visits each grid in turn.
+
+**Screen all grids** is the one-button version for an Arctis with a loaded
+magazine: inventory the magazine, then run the grid tasks on every grid
+found, exchanging grids as it goes. On a fixed holder every grid is already
+in place, so it is the same run with no exchanges.
+
+## Where this fits
+
+Screening comes before anything on the lamella pages: overview every grid
+first, then choose which grids and which squares to mark positions on.
+Positions marked on a grid's overview belong to that grid, and the lamella
+workflow moves to the right slot for each.

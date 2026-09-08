@@ -1,0 +1,19 @@
+{
+  "workflows": [
+    "workflow-tab.png",
+    "task-row.png",
+    "attention-required.png",
+    "prompt-confirm.png",
+    "prompt-runmillingtask-fiducial.png",
+    "prompt-editalignmentarea.png",
+    "workflow-summary.png",
+    "lamella-after-fiducial.png",
+    "queue-running.png",
+    "queue-row-menu.png",
+    "prompt-runmillingtask-rough-milling.png",
+    "prompt-runmillingtask-polishing.png",
+    "lamella-after-polishing.png",
+    "workflow-finished.png",
+    "grids-view.png"
+  ]
+}
