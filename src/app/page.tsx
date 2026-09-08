@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import Logo from "./Logo";
+import { ThemeProvider } from "next-themes";
+import ThemeToggle from "./ThemeToggle";
 import { useState } from "react";
 import { RELATED_PROJECTS } from "@/app/data";
 import CommunityCard from "./CommunityCard";
@@ -13,7 +16,7 @@ const CONTENT = {
     { name: "Hardware", url: "#hardware", type: "scroll" },
     { name: "Publications", url: "#publications", type: "scroll" },
     { name: "Documentation", url: "/docs", type: "route" },
-    { name: "Get Started", url: "/docs/#on-grid-lamella-milling-walkthrough", type: "external" }
+    { name: "Get Started", url: "/docs/first-lamella/", type: "route" }
   ],
 
   socials: {
@@ -22,9 +25,7 @@ const CONTENT = {
   },
 
   hero: {
-    title: "Unified control software for",
-    highlight: "FIB-SEM",
-    titleEnd: "microscopy",
+    title: "Unified control software for FIB-SEM microscopy",
     description:
       "Open-source platform unifying microscope drivers, automating complex workflows, and enabling reproducible cryo-electron tomography sample preparation.",
   },
@@ -144,7 +145,7 @@ const CONTENT = {
         { name: "License", url: "https://github.com/fibsem-os/fibsem-os/blob/main/LICENSE" }
       ]
     },
-    copyright: "© 2025 fibsemOS Contributors. Open source under MIT license.",
+    copyright: "© 2026 fibsemOS Contributors. Open source under MIT license.",
   },
 };
 
@@ -160,83 +161,47 @@ const MailIcon = () => (
   </svg>
 );
 
-const DeepwikiIcon = () => (
-  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-  </svg>
-);
+const link = "text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors";
+const chip = "border border-gray-200 dark:border-neutral-800 text-gray-700 hover:border-gray-900 dark:hover:border-gray-100 hover:text-gray-900 dark:hover:text-white px-3.5 py-1.5 rounded-md text-sm transition-colors";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const allCommunityMembers = [
-    ...communityMembers
-  ];
+  const allCommunityMembers = [...communityMembers];
 
   return (
-    <main className="min-h-screen bg-gradient-to-br  via-orange-100/50 to-blue-100/50 text-dark-navy">
-      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 shrink-0 mr-8">
-            <span className="text-xl font-bold text-primary-blue font-[family-name:var(--font-ibm-plex)]">
-              {CONTENT.brand}
-            </span>
+    <ThemeProvider attribute="class" defaultTheme="system" storageKey="theme" disableTransitionOnChange>
+    <main className="min-h-screen bg-white dark:bg-[#111] text-gray-900 dark:text-gray-100">
+      <nav className="sticky top-0 z-50 bg-white/90 dark:bg-[#111]/90 backdrop-blur-sm border-b border-gray-200 dark:border-neutral-800">
+        <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+          <Link href="/" className="flex items-center shrink-0 mr-8 text-gray-900 dark:text-gray-100">
+            <Logo className="h-5" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex flex-1 items-center justify-end gap-8">
-            {CONTENT.nav.map((item) => (
-              item.type === "scroll" ? (
-                <Link
-                  key={item.name}
-                  href={item.url}
-                  className="text-sm text-slate-500 hover:text-primary-blue transition-colors font-medium"
-                >
-                  {item.name}
-                </Link>
-              ) : item.type === "route" ? (
-                <Link
-                  key={item.name}
-                  href={item.url}
-                  className="text-sm text-slate-500 hover:text-primary-blue transition-colors font-medium"
-                >
-                  {item.name}
-                </Link>
-              ) : (
-                <a
-                  key={item.name}
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-500 hover:text-primary-blue transition-colors font-medium"
-                >
+          <div className="hidden md:flex flex-1 items-center justify-end gap-7">
+            {CONTENT.nav.map((item) =>
+              item.type === "external" ? (
+                <a key={item.name} href={item.url} target="_blank" rel="noopener noreferrer" className={link}>
                   {item.name}
                 </a>
+              ) : (
+                <Link key={item.name} href={item.url} className={link}>
+                  {item.name}
+                </Link>
               )
-            ))}
-
-            <div className="flex items-center gap-3 pl-4 border-l border-gray-200">
-              <a
-                href={CONTENT.socials.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-primary-blue transition-colors"
-              >
+            )}
+            <div className="flex items-center gap-3 pl-5 border-l border-gray-200 dark:border-neutral-800">
+              <a href={CONTENT.socials.github} target="_blank" rel="noopener noreferrer" className={link} aria-label="GitHub">
                 <GithubIcon />
               </a>
-              <a
-                href={CONTENT.socials.email}
-                className="text-slate-400 hover:text-primary-blue transition-colors"
-              >
+              <a href={CONTENT.socials.email} className={link} aria-label="Email">
                 <MailIcon />
               </a>
+              <ThemeToggle />
             </div>
           </div>
 
-          <button
-            className="md:hidden text-dark-navy"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
+          <button className="md:hidden text-gray-900 dark:text-gray-100" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Menu">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -244,127 +209,106 @@ export default function Home() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden bg-cream border-t border-gray-200 px-4 py-2 shadow-lg">
-            {CONTENT.nav.map((item) => (
-              item.type === "route" ? (
-                <Link
-                  key={item.name}
-                  href={item.url}
-                  className="block py-2 text-sm text-slate-600 hover:text-primary-blue"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ) : (
-                <a
-                  key={item.name}
-                  href={item.url}
-                  target={item.type === "external" ? "_blank" : undefined}
-                  rel={item.type === "external" ? "noopener noreferrer" : undefined}
-                  className="block py-2 text-sm text-slate-600 hover:text-primary-blue"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+          <div className="md:hidden bg-white dark:bg-[#111] border-t border-gray-200 dark:border-neutral-800 px-4 py-2">
+            {CONTENT.nav.map((item) =>
+              item.type === "external" ? (
+                <a key={item.name} href={item.url} target="_blank" rel="noopener noreferrer" className={`block py-2 ${link}`} onClick={() => setMobileMenuOpen(false)}>
                   {item.name}
                 </a>
+              ) : (
+                <Link key={item.name} href={item.url} className={`block py-2 ${link}`} onClick={() => setMobileMenuOpen(false)}>
+                  {item.name}
+                </Link>
               )
-            ))}
+            )}
           </div>
         )}
       </nav>
 
-      {/* Hero Text Section: Tightened top padding and left-aligned */}
-      <section className="pt-10 pb-2 px-4 md:text-left">
+      <section className="pt-16 pb-10 px-4">
         <div className="max-w-5xl mx-auto">
-          <h3 className="text-md md:text-2xl font-semibold mb-3 text-dark-navy font-[family-name:var(--font-ibm-plex)] tracking-tight">
-            {CONTENT.hero.title}{" "}
-            <span className="text-primary-blue font-bold">
-              {CONTENT.hero.highlight}
-            </span>{" "}
-            {CONTENT.hero.titleEnd}
-          </h3>
-          <p className="text-slate-500 text-md mb-4 max-w-2xl leading-relaxed">
+          <Logo className="h-12 md:h-16 text-gray-900 dark:text-gray-100" />
+          <h1 className="mt-8 text-2xl md:text-4xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 max-w-3xl">
+            {CONTENT.hero.title}
+          </h1>
+          <p className="mt-4 text-gray-600 dark:text-gray-400 text-base md:text-lg max-w-2xl leading-relaxed">
             {CONTENT.hero.description}
           </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="/docs/first-lamella/"
+              className="bg-gray-900 text-white hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200 px-4 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              Get started
+            </Link>
+            <Link
+              href="/docs"
+              className="border border-gray-300 dark:border-neutral-700 text-gray-900 dark:text-gray-100 hover:border-gray-900 dark:hover:border-gray-100 px-4 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              Documentation
+            </Link>
+            <a
+              href={CONTENT.socials.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-2 py-2 text-sm font-medium transition-colors"
+            >
+              <GithubIcon /> GitHub
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* Architecture/Image Section: Merged flow with negative margins */}
-      <section id="architecture" className="pb-20 px-4">
+      <section id="architecture" className="pb-16 px-4">
         <div className="max-w-5xl mx-auto">
-          {/* Image Container with Blur Overlay */}
-          <div className="relative rounded-lg overflow-hidden shadow-md border border-gray-200">
-            <div className="w-full">
-              <Image
-                src={CONTENT.architecture.diagramImage}
-                alt="Architecture Diagram"
-                width={3500}
-                height={1500}
-                className="w-full h-auto object-cover"
-                sizes="(max-width: 768px) 100vw, 1024px"
-                priority
-              />
-            </div>
-            {/* Bottom Blur Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-white/90 via-white/40 to-transparent backdrop-blur-[2px] pointer-events-none" />
+          <div className="rounded-lg overflow-hidden border border-gray-200 dark:border-neutral-800">
+            <Image
+              src={CONTENT.architecture.diagramImage}
+              alt="fibsemOS running on a FIB-SEM"
+              width={3500}
+              height={1500}
+              className="w-full h-auto object-cover"
+              sizes="(max-width: 768px) 100vw, 1024px"
+              priority
+            />
           </div>
 
-          {/* Feature Grid: "Flying" over the image with negative margin */}
-          <div className="relative z-10 -mt-24 px-4 md:px-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {CONTENT.architecture.features.map((f) => (
-              <div
-                key={f.title}
-                className="bg-white/95 backdrop-blur-sm border border-gray-200 rounded-lg p-5 shadow-xl hover:border-primary-blue/40 transition-all"
-              >
-                <h3 className="font-semibold text-dark-navy mb-1.5 text-sm font-[family-name:var(--font-ibm-plex)]">{f.title}</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">{f.desc}</p>
+              <div key={f.title} className="border border-gray-200 dark:border-neutral-800 rounded-lg p-5 hover:border-gray-400 dark:hover:border-neutral-500 transition-colors">
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1.5 text-sm">{f.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="community" className="py-10 px-4">
+      <section id="community" className="py-12 px-4 border-t border-gray-200 dark:border-neutral-800">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-semibold text-dark-navy mb-8 font-[family-name:var(--font-ibm-plex)]">
-            Community
-          </h2>
-
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-8">Community</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {allCommunityMembers.map((member, index) => (
               <CommunityCard key={index} {...member} />
             ))}
           </div>
-
-          <div className="mt-8 text-center">
-            <Link
-              href="https://github.com/fibsem-os"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-sm text-primary-blue hover:text-dark-navy font-medium font-[family-name:var(--font-ibm-plex)]"
-            >
+          <div className="mt-8">
+            <a href={CONTENT.socials.github} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-900 dark:text-gray-100 underline underline-offset-4 decoration-gray-300 dark:decoration-neutral-600 hover:decoration-gray-900 dark:hover:decoration-gray-100">
               Get involved →
-            </Link>
+            </a>
           </div>
         </div>
       </section>
 
-      <section id="hardware" className="py-10 px-4 bg-white/50">
+      <section id="hardware" className="py-12 px-4 border-t border-gray-200 dark:border-neutral-800">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-xl font-semibold text-dark-navy mb-6 font-[family-name:var(--font-ibm-plex)]">
-            {CONTENT.hardware.title}
-          </h2>
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">{CONTENT.hardware.title}</h2>
 
           <div className="mb-6">
-            <p className="text-xs text-slate-400 uppercase tracking-wide mb-3 font-medium">Supported Hardware</p>
+            <p className="text-xs text-gray-500 uppercase tracking-wide mb-3 font-medium">Supported hardware</p>
             <div className="flex flex-wrap gap-2">
               {CONTENT.hardware.vendors.map((vendor) => (
-                <a
-                  key={vendor.name}
-                  href={vendor.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border border-slate-200 bg-white text-slate-700 hover:text-primary-blue hover:border-primary-blue/30 px-4 py-2 rounded-md text-sm font-medium transition-colors"
-                >
+                <a key={vendor.name} href={vendor.url} target="_blank" rel="noopener noreferrer" className={chip}>
                   {vendor.name}
                 </a>
               ))}
@@ -372,16 +316,10 @@ export default function Home() {
           </div>
 
           <div>
-            <p className="text-xs text-slate-400 uppercase tracking-wide mb-3 font-medium">Related Projects</p>
+            <p className="text-xs text-gray-500 uppercase tracking-wide mb-3 font-medium">Related projects</p>
             <div className="flex flex-wrap gap-2">
               {RELATED_PROJECTS.map((p) => (
-                <a
-                  key={p.name}
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border border-primary-blue/30 text-primary-blue px-4 py-2 rounded-md text-sm hover:bg-primary-blue hover:text-white transition-colors font-medium"
-                >
+                <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className={chip}>
                   {p.name}
                 </a>
               ))}
@@ -390,85 +328,53 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="publications" className="py-10 px-4">
+      <section id="publications" className="py-12 px-4 border-t border-gray-200 dark:border-neutral-800">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-xl font-semibold text-dark-navy mb-6 font-[family-name:var(--font-ibm-plex)]">
-            {CONTENT.publications.title}
-          </h2>
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">{CONTENT.publications.title}</h2>
           <div className="grid grid-cols-[auto_1fr] sm:grid-cols-[auto_1fr_auto] gap-x-6 gap-y-3 items-baseline">
             {CONTENT.publications.list.map((pub, idx) => (
               <div key={idx} className="contents group">
-                <div className="text-sm font-mono text-slate-400 tabular-nums">
-                  {pub.year}
-                </div>
-
+                <div className="text-sm font-mono text-gray-400 tabular-nums">{pub.year}</div>
                 <a
                   href={pub.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-dark-navy group-hover:text-primary-blue transition-colors font-[family-name:var(--font-ibm-plex)] leading-snug"
+                  className="font-medium text-gray-900 dark:text-gray-100 group-hover:underline underline-offset-4 decoration-gray-300 dark:decoration-neutral-600 leading-snug"
                 >
                   {pub.title}
-                  <span className="sm:hidden block text-xs text-slate-400 italic font-normal mt-0.5">
-                    {pub.journal}
-                  </span>
+                  <span className="sm:hidden block text-xs text-gray-500 italic font-normal mt-0.5">{pub.journal}</span>
                 </a>
-
-                <div className="hidden sm:block text-sm text-slate-500 italic text-right whitespace-nowrap">
-                  {pub.journal}
-                </div>
-
-                <div className="col-span-full border-b border-gray-100 sm:hidden my-2 last:hidden"></div>
+                <div className="hidden sm:block text-sm text-gray-500 italic text-right whitespace-nowrap">{pub.journal}</div>
+                <div className="col-span-full border-b border-gray-100 dark:border-neutral-800 sm:hidden my-2 last:hidden"></div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-10 px-4 bg-white/50">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-xl font-semibold mb-6 text-dark-navy font-[family-name:var(--font-ibm-plex)]">
-            {CONTENT.partners.title}
-          </h2>
-          <div className="flex flex-wrap justify-center items-center gap-10">
+      <section className="py-12 px-4 border-t border-gray-200 dark:border-neutral-800">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">{CONTENT.partners.title}</h2>
+          <div className="flex flex-wrap items-center gap-10">
             {CONTENT.partners.orgs.map((org) => (
-              <div
-                key={org.name}
-                className="grayscale hover:grayscale-0 opacity-50 hover:opacity-100 transition-all"
-              >
-                <Image
-                  src={org.logo}
-                  alt={org.name}
-                  width={120}
-                  height={60}
-                  className="object-contain h-12 w-auto"
-                />
+              <div key={org.name} className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 dark:invert dark:hover:invert-0 transition-all">
+                <Image src={org.logo} alt={org.name} width={120} height={60} className="object-contain h-10 w-auto" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <footer className="border-t border-gray-200 py-8 px-4 bg-white/80">
+      <footer className="border-t border-gray-200 dark:border-neutral-800 py-10 px-4">
         <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-6">
           <div>
-            <h3 className="text-primary-blue font-bold mb-2 font-[family-name:var(--font-ibm-plex)]">
-              {CONTENT.brand}
-            </h3>
-            <p className="text-sm text-slate-500">{CONTENT.footer.description}</p>
+            <Logo className="h-5 text-gray-900 dark:text-gray-100" />
+            <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">{CONTENT.footer.description}</p>
             <div className="flex gap-3 mt-3">
-              <a
-                href={CONTENT.socials.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-primary-blue transition-colors"
-              >
+              <a href={CONTENT.socials.github} target="_blank" rel="noopener noreferrer" className={link} aria-label="GitHub">
                 <GithubIcon />
               </a>
-              <a
-                href={CONTENT.socials.email}
-                className="text-slate-400 hover:text-primary-blue transition-colors"
-              >
+              <a href={CONTENT.socials.email} className={link} aria-label="Email">
                 <MailIcon />
               </a>
             </div>
@@ -476,26 +382,14 @@ export default function Home() {
 
           {Object.entries(CONTENT.footer.sections).map(([title, links]) => (
             <div key={title}>
-              <h4 className="font-medium text-dark-navy mb-2 text-sm font-[family-name:var(--font-ibm-plex)]">{title}</h4>
+              <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-2 text-sm">{title}</h4>
               <ul className="space-y-1">
-                {links.map((link) => (
-                  <li key={link.name}>
-                    {link.url.startsWith("/") ? (
-                      <Link
-                        href={link.url}
-                        className="text-sm text-slate-500 hover:text-primary-blue"
-                      >
-                        {link.name}
-                      </Link>
+                {links.map((l) => (
+                  <li key={l.name}>
+                    {l.url.startsWith("/") ? (
+                      <Link href={l.url} className={link}>{l.name}</Link>
                     ) : (
-                      <a
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-slate-500 hover:text-primary-blue"
-                      >
-                        {link.name}
-                      </a>
+                      <a href={l.url} target="_blank" rel="noopener noreferrer" className={link}>{l.name}</a>
                     )}
                   </li>
                 ))}
@@ -504,11 +398,11 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="max-w-5xl mx-auto mt-6 pt-4 border-t border-gray-100 text-center text-xs text-slate-400">
+        <div className="max-w-5xl mx-auto mt-8 pt-4 border-t border-gray-100 dark:border-neutral-800 text-xs text-gray-500">
           {CONTENT.footer.copyright}
         </div>
       </footer>
     </main>
+    </ThemeProvider>
   );
 }
-

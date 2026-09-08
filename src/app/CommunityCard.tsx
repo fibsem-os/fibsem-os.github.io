@@ -25,7 +25,7 @@ function ProfileImage({ src, name }: { src?: string; name: string }) {
 
   if (hasError || !src) {
     return (
-      <div className="w-full h-full flex items-center justify-center text-lg font-bold text-slate-400 bg-slate-100">
+      <div className="w-full h-full flex items-center justify-center text-lg font-bold text-slate-400 dark:text-neutral-500 bg-slate-100 dark:bg-neutral-800">
         {name.charAt(0)}
       </div>
     );
@@ -48,8 +48,8 @@ function AffiliationLogo({ src, alt }: { src: string; alt: string }) {
 
   if (hasError || !src) {
     return (
-      <div className="h-6 w-6 flex-shrink-0 rounded bg-slate-100 flex items-center justify-center" title={alt}>
-        <span className="text-[9px] text-slate-400 font-medium">
+      <div className="h-6 w-6 flex-shrink-0 rounded bg-slate-100 dark:bg-neutral-800 flex items-center justify-center" title={alt}>
+        <span className="text-[9px] text-slate-400 dark:text-neutral-500 font-medium">
           {alt.charAt(0)}
         </span>
       </div>
@@ -61,7 +61,7 @@ function AffiliationLogo({ src, alt }: { src: string; alt: string }) {
       <img 
         src={src} 
         alt={alt}
-        className="h-full w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+        className="h-full w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 dark:invert dark:group-hover:invert-0 transition-all duration-300"
         onError={() => setHasError(true)} 
       />
     </div>
@@ -78,10 +78,10 @@ export default function CommunityCard({
   affiliations 
 }: CommunityCardProps) {
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md hover:border-primary-blue/30 transition-all h-full group">
+    <div className="bg-white dark:bg-[#111] border border-gray-200 dark:border-neutral-800 rounded-lg p-4 hover:border-gray-400 dark:hover:border-neutral-500 transition-colors h-full group">
       <div className="flex items-start gap-4">
         {/* Avatar Section */}
-        <div className="relative w-16 h-16 rounded-full overflow-hidden bg-slate-100 flex-shrink-0 ring-2 ring-slate-100">
+        <div className="relative w-16 h-16 rounded-full overflow-hidden bg-slate-100 dark:bg-neutral-800 flex-shrink-0 ring-2 ring-slate-100 dark:ring-neutral-800">
           <ProfileImage src={image} name={name} />
         </div>
 
@@ -100,31 +100,31 @@ export default function CommunityCard({
                   rel="noopener noreferrer"
                   className="block"
                 >
-                  <h3 className="font-semibold text-dark-navy group-hover:text-primary-blue transition-colors truncate font-[family-name:var(--font-ibm-plex)]">
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:underline underline-offset-4 decoration-gray-300 dark:decoration-neutral-600 truncate">
                     {name}
                   </h3>
                 </Link>
               ) : (
-                <h3 className="font-semibold text-dark-navy truncate font-[family-name:var(--font-ibm-plex)]">
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 truncate">
                   {name}
                 </h3>
               )}
 
               {title && (
-                <p className="text-sm text-slate-500 mt-0.5 truncate">{title}</p>
+                <p className="text-sm text-slate-500 dark:text-neutral-400 mt-0.5 truncate">{title}</p>
               )}
             </div>
 
             {/* Right: Pills Stack */}
             <div className="flex flex-col items-end gap-1.5 shrink-0 ml-1">
               {location && (
-                <div className="inline-flex items-center px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200">
-                  <span className="text-[10px] font-medium text-slate-500 leading-none">{location}</span>
+                <div className="inline-flex items-center px-2 py-0.5 rounded-full bg-slate-100 dark:bg-neutral-800 border border-slate-200">
+                  <span className="text-[10px] font-medium text-slate-500 dark:text-neutral-400 leading-none">{location}</span>
                 </div>
               )}
               {org && (!affiliations || affiliations.length === 0) && (
                 <div className="inline-flex items-center px-2 py-0.5 rounded-full bg-slate-50 border border-slate-100">
-                  <span className="text-[10px] text-slate-400 leading-none max-w-[100px] truncate">{org}</span>
+                  <span className="text-[10px] text-slate-400 dark:text-neutral-500 leading-none max-w-[100px] truncate">{org}</span>
                 </div>
               )}
             </div>

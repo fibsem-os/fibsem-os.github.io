@@ -3,13 +3,7 @@
     "name": "Patrick Cleeve",
     "location": "Australia",
     "website": "https://github.com/patrickcleeve",
-    "image": "/contributors/patrick_cleeve.jpg",
     "affiliations": [
-      {
-        "name": "fibsemOS",
-        "logo": "/prelim_FibsemOS.png",
-        "url": "https://github.com/fibsem-os"
-      },
       {
         "name": "Monash University",
         "logo": "/related_orgs/Monash.svg",
@@ -21,7 +15,6 @@
     "name": "Sven Klumpe",
     "location": "Austria",
     "website": "https://www.imp.ac.at/groups/sven-klumpe",
-    "image": "/contributors/sven_klumpe.jpg",
     "affiliations": [
       {
         "name": "IMP Vienna",
@@ -39,7 +32,6 @@
     "name": "Alex de Marco",
     "location": "USA",
     "website": "https://nysbc.org/",
-    "image": "/contributors/alex_de_marco.jpg",
     "affiliations": [
       {
         "name": "NY Structural Biology Center",
@@ -52,7 +44,6 @@
     "name": "Georg Ramm",
     "location": "Australia",
     "website": "https://research.monash.edu/en/persons/georg-ramm",
-    "image": "/contributors/georg_ramm.jpg",
     "affiliations": [
       {
         "name": "Monash University",
@@ -65,7 +56,6 @@
     "name": "Julia Mahamid",
     "location": "Germany",
     "website": "https://www.embl.org/groups/mahamid",
-    "image": "/community/julia_mahamid.jpg",
     "affiliations": [
       {
         "name": "European Molecular Biology Laboratory (EMBL)",
@@ -78,7 +68,6 @@
     "name": "Linhua Tai",
     "location": "Germany",
     "website": "https://www.embl.org",
-    "image": "/community/linhua_tan.jpg",
     "affiliations": [
       {
         "name": "European Molecular Biology Laboratory (EMBL)",
@@ -90,7 +79,6 @@
     "name": "Sebastian Unger",
     "location": "Germany",
     "website": "https://www.embl.org",
-    "image": "/community/linhua_tan.jpg",
     "affiliations": [
       {
         "name": "European Molecular Biology Laboratory (EMBL)",
@@ -102,7 +90,6 @@
     "name": "Jenny Sachweh",
     "location": "Germany",
     "website": "https://www.embl.org",
-    "image": "/community/jenny_sachweh.jpg",
     "affiliations": [
       {
         "name": "European Molecular Biology Laboratory (EMBL)",
@@ -114,7 +101,6 @@
     "name": "Jürgen Plitzko",
     "location": "Germany",
     "website": "https://www.biochem.mpg.de/plitzko",
-    "image": "/community/juergen_plitzko.jpg",
     "affiliations": [
       {
         "name": "Max Planck Institute of Biochemistry",
@@ -127,7 +113,6 @@
     "name": "Johann Brenner",
     "location": "Germany",
     "website": "https://www.biochem.mpg.de",
-    "image": "/community/johann_brenner.jpg",
     "affiliations": [
       {
         "name": "Max Planck Institute of Biochemistry",
@@ -139,7 +124,6 @@
     "name": "Maud Dumoux",
     "location": "UK",
     "website": "https://www.rfi.ac.uk/people/maud-dumoux/",
-    "image": "/community/maud_dumoux.jpg",
     "affiliations": [
       {
         "name": "Rosalind Franklin Institute",
@@ -152,7 +136,6 @@
     "name": "Michael Grange",
     "location": "UK",
     "website": "https://www.rfi.ac.uk/people/michael-grange/",
-    "image": "/community/michael_grange.jpg",
     "affiliations": [
       {
         "name": "Rosalind Franklin Institute",
@@ -164,7 +147,6 @@
     "name": "Casper Berger",
     "location": "UK",
     "website": "https://www.rfi.ac.uk",
-    "image": "/community/placeholder_icecube.jpg",
     "affiliations": [
       {
         "name": "Rosalind Franklin Institute",
@@ -176,7 +158,6 @@
     "name": "Thomas Fish",
     "location": "UK",
     "website": "https://www.rfi.ac.uk",
-    "image": "/community/placeholder_icecube.jpg",
     "affiliations": [
       {
         "name": "Rosalind Franklin Institute",
@@ -188,7 +169,6 @@
     "name": "Rohit Kannachel",
     "location": "USA",
     "website": "https://nysbc.org/",
-    "image": "/community/placeholder_icecube.png",
     "affiliations": [
       {
         "name": "NY Structural Biology Center",
@@ -201,7 +181,6 @@
     "name": "Bridget Carragher",
     "location": "USA",
     "website": "https://biohub.org/",
-    "image": "/community/placeholder_icecube.png",
     "affiliations": [
       {
         "name": "Biohub",
@@ -213,7 +192,6 @@
     "name": "Garrett Greenan",
     "location": "USA",
     "website": "https://biohub.org/",
-    "image": "/community/placeholder_icecube.png",
     "affiliations": [
       {
         "name": "Biohub",
@@ -225,7 +203,6 @@
     "name": "Davis Perez",
     "location": "USA",
     "website": "https://biohub.org/",
-    "image": "/community/placeholder_icecube.png",
     "affiliations": [
       {
         "name": "Biohub",
@@ -237,7 +214,6 @@
     "name": "Julia Peukes",
     "location": "USA",
     "website": "https://biohub.org/",
-    "image": "/community/placeholder_icecube.png",
     "affiliations": [
       {
         "name": "Biohub",
@@ -249,7 +225,6 @@
     "name": "Sophia Betzler",
     "location": "USA",
     "website": "https://biohub.org/",
-    "image": "/community/placeholder_icecube.png",
     "affiliations": [
       {
         "name": "Biohub",
@@ -261,7 +236,6 @@
     "name": "Sergey Gorelick",
     "location": "Australia",
     "website": "https://www.monash.edu/researchinfrastructure/cryo-em",
-    "image": "/community/placeholder_icecube.png",
     "affiliations": [
       {
         "name": "Monash University",
@@ -273,7 +247,6 @@
     "name": "Artem Kushner",
     "location": "Austria",
     "website": "https://www.imp.ac.at/groups/sven-klumpe",
-    "image": "/community/placeholder_icecube.png",
     "affiliations": [
       {
         "name": "IMBA Vienna",

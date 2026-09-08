@@ -23,7 +23,7 @@ Alternatively, open a PR, place the media in `public` and add yourself to the [c
     "name"        : "Jane Smith", 
     "website"     : "https://example.com",                # <---- [OPTIONAL] your personal or institutional page
     "title"       : "The Freezer of Water",               # <---- [OPTIONAL]
-    "image"       : "/community/placeholder_icecube.png", # <---- [OPTIONAL, if you prefer the ice cube] Your pic 
+    "image"       : "/community/jane_smith.jpg",          # <---- [OPTIONAL] your picture; omit it for an initial
     "affiliations": [ # <-- Can be multiple
       {
         "name": "Rosalind Franklin Institute",
