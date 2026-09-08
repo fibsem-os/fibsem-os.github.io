@@ -1,19 +1,20 @@
 {
-  "workflows": [
-    "workflow-tab.png",
-    "task-row.png",
-    "attention-required.png",
-    "prompt-confirm.png",
-    "prompt-runmillingtask-fiducial.png",
-    "prompt-editalignmentarea.png",
-    "workflow-summary.png",
-    "lamella-after-fiducial.png",
-    "queue-running.png",
-    "queue-row-menu.png",
-    "prompt-runmillingtask-rough-milling.png",
-    "prompt-runmillingtask-polishing.png",
-    "lamella-after-polishing.png",
-    "workflow-finished.png",
-    "grids-view.png"
+  "fluorescence": [
+    "fluorescence-tab.png",
+    "fluorescence-buttons.png",
+    "objective-inserted.png",
+    "channels.png",
+    "fm-view-live.png",
+    "view-menu.png",
+    "viewer.png",
+    "composite.png",
+    "channel-reflection.png",
+    "channel-dapi.png",
+    "channel-gfp.png",
+    "channel-mcherry.png",
+    "fm-view-toolbar.png",
+    "fm-layers-panel.png",
+    "z-parameters.png",
+    "z-stack.png"
   ]
 }

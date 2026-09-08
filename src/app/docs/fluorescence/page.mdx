@@ -40,10 +40,11 @@ image histogram. Below the panels are the buttons:
 
 ![The acquisition buttons](/doc/img/fluorescence/fluorescence-buttons.png)
 
-- **(1) Acquire Image** takes one image of the **selected** channel.
-- **(2) Start Acquisition** streams that channel live until stopped.
-- **(3) Acquire Z-Stack** takes **every** channel in the list at every plane
-  of the stack.
+- **(1) Acquire Image** takes every channel in the list, one plane each: one
+  file with all the channels in it.
+- **(2) Start Acquisition** streams the **selected** channel live until
+  stopped.
+- **(3) Acquire Z-Stack** takes every channel at every plane of the stack.
 - **(4) Run Auto-Focus** searches the objective around its position for the
   sharpest image on the autofocus channel.
 
@@ -80,8 +81,9 @@ filter and show only what the dye lights: on the simulator the 365 nm line
 lights nuclei, 450 nm the cell bodies and 550 nm a subset of cells, standing
 in for DAPI, GFP and mCherry.
 
-Ticked channels are the ones a z-stack takes. The highlighted one is the
-selected channel, which is what Acquire Image and the live view use.
+Every channel in the list is taken by Acquire Image and Acquire Z-Stack.
+The highlighted one is the selected channel, which is what the live view
+streams.
 
 ## 4. The fluorescence view
 
@@ -95,10 +97,13 @@ distance.
 ![The Microscope tab's fluorescence view: one channel, one frame](/doc/img/fluorescence/fm-view-live.png)
 
 To see all the channels of an image together, open it in the
-**Fluorescence Image Viewer**, a separate window with the same canvas and a
-list of loaded images. Every acquisition is written to disk as an OME-TIFF
-with all its channels and planes; **Load Images...** opens one, and the
-details under the list say what is in it.
+**Fluorescence Image Viewer** from the **View** menu: a separate window with
+the same canvas and a list of loaded images. It needs no experiment open.
+Every acquisition is written to disk as an OME-TIFF with all its channels
+and planes; **Load Images...** opens one, starting in the open experiment's
+folder, and the details under the list say what is in it.
+
+![View → Fluorescence Image Viewer](/doc/img/fluorescence/view-menu.png)
 
 ![The Fluorescence Image Viewer: the canvas, the loaded images, and Load](/doc/img/fluorescence/viewer.png)
 
