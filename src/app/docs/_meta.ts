@@ -23,6 +23,7 @@ const meta: MetaRecord = {
   lamella: "Lamella",
   tasks: "Tasks",
   workflows: "Workflows",
+  correlation: "Spot burns and correlation",
   // built and reviewable by URL, hidden until features.grid_workflow is on by default
   "grid-workflow": { title: "Grid workflow", display: "hidden" },
   "-- developers": { type: "separator", title: "Developers" },

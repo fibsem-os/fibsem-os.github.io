@@ -1,20 +1,17 @@
 {
-  "fluorescence": [
-    "fluorescence-tab.png",
-    "fluorescence-buttons.png",
-    "objective-inserted.png",
-    "channels.png",
-    "fm-view-live.png",
-    "view-menu.png",
-    "viewer.png",
-    "composite.png",
-    "channel-reflection.png",
-    "channel-dapi.png",
-    "channel-gfp.png",
-    "channel-mcherry.png",
-    "fm-view-toolbar.png",
-    "fm-layers-panel.png",
-    "z-parameters.png",
-    "z-stack.png"
+  "correlation": [
+    "protocol-spot-burn.png",
+    "protocol-acquire-fm.png",
+    "workflow-selection.png",
+    "prompt-spot-burn.png",
+    "spot-burn-tab.png",
+    "spot-burn-by-hand.png",
+    "lamella-after-burn.png",
+    "lamella-fm-stack.png",
+    "correlation-images.png",
+    "correlation-coordinates.png",
+    "correlation-results.png",
+    "correlation-refractive-index.png",
+    "lamella-after-correlation.png"
   ]
 }
