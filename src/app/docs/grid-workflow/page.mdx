@@ -8,45 +8,164 @@ This page describes a feature that is switched off by default. It is
 written ahead of the switch so that it is ready when the feature is, and
 it may change before then.
 
-By the end of this page you know what a grid task is, how it differs from
-the lamella tasks on the other pages, and how to run the protocol's grid
-tasks across every grid in the holder.
+By the end of this page the protocol has grid tasks in it, the experiment
+has a record for every grid in the holder, and an SEM, FIB and fluorescence
+overview of each grid has been acquired in one run and reviewed in the
+application.
 
-## Grid tasks
+## Before you start
+
+- **Enable Grid Workflow** ticked under Features in **Edit → Preferences**.
+  With it off none of the views on this page are shown.
+- A calibrated holder. On an Arctis the compustage's working slot is
+  calibrated as shipped; on a fixed holder, calibrate each slot on the
+  [Sample holder](/docs/sample-holder) page first.
+- An experiment open, with a task protocol.
+- On an Arctis, grids in the magazine and the magazine scanned. The Arctis
+  section of the [Sample holder](/docs/sample-holder) page covers the
+  Sample tab, where the scan is run.
+
+The examples on this page are on the simulated Arctis, with three grids in
+the magazine. The fluorescence overview task needs an in-chamber
+fluorescence microscope; the SEM and FIB overviews run on any instrument.
+
+## 1. Grid tasks
 
 A lamella task is done to one lamella. A **grid task** is done to a whole
-grid: it needs the grid's slot to be calibrated on the
-[Sample holder](/docs/sample-holder) page, drives to that slot, and works
-from there. Two ship:
+grid: it drives to the grid's slot and works from there. Two ship:
 
 - **Beam overview**: a tiled SEM or FIB overview of the grid, as the
-  [Overview](/docs/overview) tab takes by hand, saved with the experiment
-  and listed on the Overview tab.
+  [Overview](/docs/overview) tab takes by hand. One task type serves both
+  beams; the beam is one of its settings.
 - **Fluorescence overview** (Arctis): moves to the fluorescence microscope,
   inserts the objective, acquires a tiled fluorescence overview, and puts
-  everything back.
+  the objective back as it found it.
 
-Grid tasks live in their own section of the protocol, under grid tasks,
-and are edited on the **Grid** sub-tab of the Protocol tab.
+Grid tasks live in their own section of the protocol and are edited on the
+Protocol tab, under a **Grid** page beside the lamella tasks.
 
-## The Grids view
+![The Protocol tab's Grid page with three grid tasks](/doc/img/grid-workflow/protocol-grid-page.png)
 
-The Workflow tab has a second view beside Lamella: **Grids**.
+- **(1)** The **Lamella | Grid** selector. Grid shows the grid tasks, and
+  the columns to the right follow.
+- **(2)** The grid tasks in the protocol. **+** adds one: pick the type and
+  give it a name. The name is what the task's outputs are filed under, so
+  keep it distinct.
+- **(3)** The selected task's settings. A beam overview has an orientation,
+  a filename stem and the same tile, imaging and focus settings as the
+  Overview tab; a fluorescence overview has channels, tile settings and a
+  z-stack. Edits save to the protocol as they are made.
 
-![The Grids view on the Workflow tab](/doc/img/workflows/grids-view.png)
+The protocol on this page has three: an SEM overview and a FIB overview,
+both 2 x 2 tiles at the SEM orientation, and a 7 x 7 fluorescence overview
+of two channels, reflection and GFP.
 
-It lists the grids the holder knows, each with its slot and whether it is
-calibrated, and the grid tasks the protocol has. Tick grids and tasks and
-press **Run Workflow**, as for lamellae; the run visits each grid in turn.
+## 2. Grid records
+
+The **Grids** tab, between Lamella and Workflow, holds the experiment's
+grid records: one card per grid the experiment knows about, with the
+grid's results beside it.
+
+A new experiment has no records. The refresh button under the cards reads
+what the hardware holds and adds a record for every grid it finds. On an
+Arctis that is what the autoloader knows about its magazine; the physical
+scan of the magazine is on the Sample tab. On a fixed holder it is the
+slots marked occupied.
+
+![The Grids tab after the inventory: three cards](/doc/img/grid-workflow/grids-tab-inventory.png)
+
+- **(1)** One card per grid. The line under the name is the grid's status:
+  the last task completed on it. A grid in the beam carries a **Loaded**
+  chip, and one the hardware no longer reports carries **not present**.
+  The icon beside the name is a quality verdict for a person to set; no
+  task sets it. The card's menu renames the grid, and on an Arctis loads it
+  into the beam or sends it back to the magazine.
+- **(2)** The refresh, to run again whenever grids have changed.
+- **(3)** The selected grid's results. Nothing has run yet, so there are
+  none.
+
+A record keeps its name and history when the grid is taken out of the
+instrument; the card reads **not present** until it is back.
+
+## 3. Running the grid tasks
+
+The Workflow tab has a second view beside Lamella: **Grids**. It is the
+grid counterpart of the lamella run: pick grids, pick tasks, press Run.
+
+![The Grids view on the Workflow tab](/doc/img/grid-workflow/grids-view.png)
+
+- **(1)** The **Lamella | Grids** selector. Run acts on whichever view is
+  showing.
+- **(2)** The grids, each with its slot and whether it is present. Tick the
+  ones to screen.
+- **(3)** The protocol's grid tasks. Tick the ones to run; drag to reorder.
+  The order here is the order they run on each grid, and it is saved back
+  to the protocol.
+- **(4)** **Screen all grids**, covered below.
+- **(5)** **Run Workflow**.
+
+The run is grid-outer: it loads the first grid, runs every ticked task on
+it, then moves to the next grid. The line above the buttons says how many
+exchanges that is. On a fixed holder every grid is already in place, so
+the load step has nothing to do; each task moves the stage to the grid's
+slot itself.
+
+Run opens a preflight:
+
+![The preflight for a grid run](/doc/img/grid-workflow/run-preflight.png)
+
+It counts the grids, tasks and exchanges, lists the first steps of the
+plan, and says where the files go: `grids/<grid>/` under the experiment.
+Two rules of the run are stated on it. A grid that will not load is
+skipped and the run continues with the next; Stop ends the run at the next
+step, not mid-task.
+
+While it runs, the queue on the right shows each grid as an item, with its
+load and its tasks as steps:
+
+![The queue mid-run: the first grid done, the second under way](/doc/img/grid-workflow/queue-running.png)
+
+The load is a step of its own, so an exchange that fails is visible as
+such. When the run ends, the summary lists each grid, each task, and how it
+went:
+
+![The run summary for a grid run](/doc/img/grid-workflow/run-summary.png)
+
+### Screen all grids
 
 **Screen all grids** is the one-button version for an Arctis with a loaded
-magazine: inventory the magazine, then run the grid tasks on every grid
-found, exchanging grids as it goes. On a fixed holder every grid is already
-in place, so it is the same run with no exchanges.
+magazine. It refreshes the inventory, adds a record for every grid found,
+and runs the ticked tasks on all of them, exchanging grids as it goes. The
+same preflight opens first.
 
-## Where this fits
+![The preflight for Screen all grids](/doc/img/grid-workflow/screen-all-preflight.png)
+
+On a fixed holder it is the same run with no exchanges.
+
+## 4. Reviewing the results
+
+Back on the Grids tab, each card carries the thumbnail of its latest
+overview and the name of the last task that completed on it. Select a card
+to see its history.
+
+![The Grids tab after the run: results for the first grid](/doc/img/grid-workflow/grids-tab-results.png)
+
+- **(1)** The cards, each with its latest overview.
+- **(2)** The selected grid's history: every load and task, with its
+  outcome and the time it ran.
+- **(3)** The image a task recorded. Click it to open the overview at full
+  size, with a scale bar.
+
+![An overview opened from the results](/doc/img/grid-workflow/overview-dialog.png)
+
+The files are under `grids/<grid>/<task>/` in the experiment folder, as
+the preflight said: the stitched overview, and a thumbnail beside it.
+
+## 5. Where this fits
 
 Screening comes before anything on the lamella pages: overview every grid
-first, then choose which grids and which squares to mark positions on.
-Positions marked on a grid's overview belong to that grid, and the lamella
-workflow moves to the right slot for each.
+first, then choose which grids are worth the session. Marking positions on
+a grid's overview and milling them is the lamella workflow, from
+[Overview acquisition](/docs/overview) onward. Associating those positions
+with the grid they were marked on, so that a lamella run moves to the
+right slot for each, is planned and not yet part of the workflow.
