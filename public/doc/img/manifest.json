@@ -1,17 +1,14 @@
 {
-  "correlation": [
-    "protocol-spot-burn.png",
-    "protocol-acquire-fm.png",
-    "workflow-selection.png",
-    "prompt-spot-burn.png",
-    "spot-burn-tab.png",
-    "spot-burn-by-hand.png",
-    "lamella-after-burn.png",
-    "lamella-fm-stack.png",
-    "correlation-images.png",
-    "correlation-coordinates.png",
-    "correlation-results.png",
-    "correlation-refractive-index.png",
-    "lamella-after-correlation.png"
+  "grid-workflow": [
+    "protocol-grid-page.png",
+    "grids-tab-inventory.png",
+    "grids-view.png",
+    "run-preflight.png",
+    "queue-running.png",
+    "run-finished.png",
+    "run-summary.png",
+    "screen-all-preflight.png",
+    "grids-tab-results.png",
+    "overview-dialog.png"
   ]
 }
