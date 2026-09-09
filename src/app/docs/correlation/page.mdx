@@ -25,6 +25,11 @@ is planned.
   **Use current objective position** on the Experiment tab sets it. The
   [Fluorescence imaging](/docs/fluorescence) page covers the channel and
   z-stack settings the acquisition task takes.
+- On an Arctis, **Sync Fluorescence Pose** turned on in the Setup Lamella
+  Position task. Setup centres the site and re-records the milling
+  position; with this on, the fluorescence pose follows it, so the stack is
+  taken where the marks are rather than where the lamella was first marked.
+  It is off by default.
 
 ## 1. Why correlate
 
@@ -122,18 +127,20 @@ site at the field you want first.
 ## 4. The Lamella tab
 
 On the Lamella tab, with the burn task selected, the FIB view shows the
-reference image taken after the burn, marks included (the fiducial is in
-the later images):
+latest reference image, here Mill Fiducial's, with the marks and the
+fiducial in it:
 
-![The Lamella tab after the burn](/doc/img/correlation/lamella-after-burn.png)
+![The Lamella tab after the burn and the fiducial](/doc/img/correlation/lamella-after-burn.png)
 
-- **(1)** The FIB reference image with the burn marks.
-- **(2)** Which FIB image the correlation uses. Choose the one taken after
-  the burn at the field the points were placed in, the burn task's first
-  field of view. The final references are numbered largest field first, so
-  with two fields that is the second one. The dialog places the seeded
-  points by their normalised coordinates, so on an image at another field
-  they land in the wrong place.
+- **(1)** The FIB reference image with the burn marks and the fiducial. The
+  numbered points are the coordinates the burn task was given, drawn by
+  their normalised positions; on an image at another field than the burn's
+  they do not sit on the marks.
+- **(2)** Which FIB image the correlation uses. Choose the one that matches
+  the stack: the reference taken after Mill Fiducial, so the marks and the
+  fiducial are in both images, at the smaller of its fields. The final
+  references are numbered largest field first, so with two fields that is
+  the second one.
 - **(3)** The correlation button, a target icon, opens the correlation
   dialog.
 
@@ -154,12 +161,14 @@ stack loaded:
 ![The correlation dialog: Images](/doc/img/correlation/correlation-images.png)
 
 The FIB-side fiducials are already there: they are the points the burn task
-was given, in the order it burnt them, placed as-is. Check each against the
-mark in the image and drag it onto the mark if it is off. The burn runs at a
-different current from the imaging, and the beam shifts a little with the
-current, so the marks land near the points rather than on them; a fiducial
-left on the requested point rather than the mark moves the result by that
-much. On the Coordinates tab, the fluorescence side is picked by hand. Select the reflection channel as the fiducial
+was given, in the order it burnt them, placed by their normalised
+coordinates. They are a starting point, not the answer: drag each onto its
+mark in the image. They will be off for two reasons. The points were placed
+on the burn task's own image, and an image at another field puts them at
+another scale; and the burn runs at a different current from the imaging,
+and the beam shifts a little with the current, so the marks land near the
+points rather than on them. A fiducial left off its mark moves the result by
+that much. On the Coordinates tab, the fluorescence side is picked by hand. Select the reflection channel as the fiducial
 channel, scrub to the plane where the marks are sharpest, and right-click
 each mark in the same order as the FIB list. Then select the channel the
 target fluoresces in, find the plane where it is sharpest, and right-click
