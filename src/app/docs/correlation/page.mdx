@@ -4,19 +4,26 @@ title: Spot burns and correlation
 
 # Spot burns and correlation
 
-Arctis only. By the end of this page a lamella's milling position sits on a
-fluorescent feature: the ion beam has burnt fiducial marks next to the
-target, a fluorescence z-stack has been acquired over them, and the two
-have been correlated so the point of interest in the fluorescence image is
-placed on the FIB image.
+By the end of this page a lamella's milling position sits on a fluorescent
+feature: the ion beam has burnt fiducial marks next to the target, a
+fluorescence z-stack has been acquired over them, and the two have been
+correlated so the point of interest in the fluorescence image is placed on
+the FIB image.
+
+The burn and the correlation work on any instrument. The one step that
+depends on the microscope is acquiring the stack: on an Arctis the in-chamber
+fluorescence microscope takes it as a workflow task; on a system with a
+METEOR the stack is acquired with the METEOR's own software and loaded into
+the correlation dialog from disk. Support for driving a METEOR from fibsemOS
+is planned.
 
 ## Before you start
 
-- A lamella marked on a cell, with its fluorescence pose recorded. A lamella
-  added while the objective is inserted records the objective position with
-  it; otherwise **Use current objective position** on the Experiment tab
-  sets it.
-- The [Fluorescence imaging](/docs/fluorescence) page, for the channel and
+- A lamella marked on a cell.
+- On an Arctis, the lamella's fluorescence pose with an objective position.
+  A lamella added while the objective is inserted records it; otherwise
+  **Use current objective position** on the Experiment tab sets it. The
+  [Fluorescence imaging](/docs/fluorescence) page covers the channel and
   z-stack settings the acquisition task takes.
 
 ## 1. Why correlate
@@ -31,8 +38,13 @@ which becomes the position the lamella is milled at.
 
 ## 2. The two tasks
 
-Two tasks are added to the protocol, after the setup task and before the
-milling ([Tasks](/docs/tasks) covers adding a task):
+Two tasks are added to the protocol ([Tasks](/docs/tasks) covers adding a
+task): the burn after the setup task, and the acquisition after Mill
+Fiducial. Burn the marks and mill the fiducial before acquiring the stack,
+so that both are in it: the stack is then a record of the site as it will be
+milled, and the fiducial is one more feature the two images share. On a
+system without an in-chamber fluorescence microscope, only the first task
+applies.
 
 ![The Spot Burn Fiducial task in the protocol](/doc/img/correlation/protocol-spot-burn.png)
 
@@ -41,8 +53,10 @@ few seconds at a low current, leaving a small mark in the surface at each.
 
 - **(1)** The task in the protocol's task list.
 - **(2)** Its settings: the milling current, the exposure time per point,
-  and whether to autofocus the ion beam first. The reference images below
-  them are taken after the burn, at the two fields of view given.
+  and whether to autofocus the ion beam first. Use at least 100 pA, the
+  default; below that the marks are too faint to find in the fluorescence
+  image. The reference images below them are taken after the burn, at the
+  two fields of view given.
 - **(3) Spot Burn Coordinates** edits the points themselves, in normalised
   coordinates of the reference image. Four to six points spread around the
   target, not in a line and not symmetric, give the fit something to hold on
@@ -51,20 +65,27 @@ few seconds at a low current, leaving a small mark in the surface at each.
 
 ![The Acquire Fluorescence Image task in the protocol](/doc/img/correlation/protocol-acquire-fm.png)
 
-**Acquire Fluorescence Image** (its settings at **(2)**) moves to the lamella's fluorescence pose,
-inserts the objective to the recorded position, and acquires a z-stack with
-the configured channels. Include the reflection channel, which is where the
-burn marks show, together with the channel the target fluoresces in. The
-z-range should span the depth of the target; the step sets how finely its
-depth can be read. The task retracts the objective afterwards unless told
-not to.
+**Acquire Fluorescence Image** (its settings at **(2)**), Arctis only,
+moves to the lamella's fluorescence pose, inserts the objective to the
+recorded position, and acquires a z-stack with the configured channels.
+Include the reflection channel, which is where the burn marks show, together
+with the channel the target fluoresces in. The z-range should span the depth
+of the target; the step sets how finely its depth can be read. The task
+retracts the objective afterwards unless told not to.
+
+With a METEOR, acquire the same kind of stack in its software after the
+burn, with a reflection channel and the target's channel, and save it as an
+OME-TIFF. Copy it into the lamella's folder to have it listed on the Lamella
+tab, or load it from anywhere with the **...** button beside the FM image in
+the correlation dialog.
 
 ## 3. Running them
 
-Select the lamella and the setup, burn and acquisition tasks on the
-Workflow tab and press **Run Workflow** ([Workflows](/docs/workflows)).
+Select the lamella and the setup, burn and fiducial tasks, and on an Arctis
+the acquisition task, on the Workflow tab and press **Run Workflow**
+([Workflows](/docs/workflows)).
 
-![The three tasks selected](/doc/img/correlation/workflow-selection.png)
+![The four tasks selected](/doc/img/correlation/workflow-selection.png)
 
 Supervised, the burn task stops before burning:
 
@@ -83,22 +104,42 @@ The points are shown on the FIB view, and the Spot Burn tab holds them:
 - **(2)** The point list, in normalised coordinates.
 - **(3)** The milling current and **(4)** the exposure per point.
 
-After the burn the task acquires reference images at both fields of view,
-and the acquisition task takes the fluorescence stack. Both land in the
+After the burn the task acquires reference images at both fields of view.
+Mill Fiducial then mills the fiducial and asks in the same way, and the
+acquisition task takes the fluorescence stack. Everything lands in the
 lamella's folder.
+
+### By hand
+
+A burn does not need a workflow. The **Spot Burn** tab on the Microscope tab
+is the same panel outside a task: right-click the FIB view to place points on
+the current image, set the current and exposure, and press **Run Spot Burn**.
+The marks are burnt where the points sit on the image on screen, so image the
+site at the field you want first.
+
+![The Spot Burn tab outside a workflow: points on the FIB view, the list, and Run Spot Burn](/doc/img/correlation/spot-burn-by-hand.png)
 
 ## 4. The Lamella tab
 
 On the Lamella tab, with the burn task selected, the FIB view shows the
-reference image taken after the burn, marks included:
+reference image taken after the burn, marks included (the fiducial is in
+the later images):
 
 ![The Lamella tab after the burn](/doc/img/correlation/lamella-after-burn.png)
 
 - **(1)** The FIB reference image with the burn marks.
-- **(2)** Which FIB image the correlation uses. The one taken after the
-  burn is the one to correlate against.
+- **(2)** Which FIB image the correlation uses. Choose the one taken after
+  the burn at the field the points were placed in, the burn task's first
+  field of view. The final references are numbered largest field first, so
+  with two fields that is the second one. The dialog places the seeded
+  points by their normalised coordinates, so on an image at another field
+  they land in the wrong place.
 - **(3)** The correlation button, a target icon, opens the correlation
   dialog.
+
+The Spot Burn Coordinates panel under the task's parameters holds this
+lamella's own points. Editing them here changes where the next burn on this
+lamella lands, without touching the protocol or the other lamellae.
 
 With the acquisition task selected, the view shows the stack instead, and
 the FM selector **(2)** says which stack is used:
@@ -113,14 +154,22 @@ stack loaded:
 ![The correlation dialog: Images](/doc/img/correlation/correlation-images.png)
 
 The FIB-side fiducials are already there: they are the points the burn task
-burnt, in the order it burnt them. On the Coordinates tab, the fluorescence
-side is picked by hand. Select the reflection channel as the fiducial
+was given, in the order it burnt them, placed as-is. Check each against the
+mark in the image and drag it onto the mark if it is off. The burn runs at a
+different current from the imaging, and the beam shifts a little with the
+current, so the marks land near the points rather than on them; a fiducial
+left on the requested point rather than the mark moves the result by that
+much. On the Coordinates tab, the fluorescence side is picked by hand. Select the reflection channel as the fiducial
 channel, scrub to the plane where the marks are sharpest, and right-click
 each mark in the same order as the FIB list. Then select the channel the
 target fluoresces in, find the plane where it is sharpest, and right-click
 it to add the point of interest.
 
 ![The Coordinates tab: paired fiducials and the point of interest](/doc/img/correlation/correlation-coordinates.png)
+
+The boxes mark the burn marks in the fluorescence image: small dark points
+with a bright rim in the reflection channel, here composited with the
+target's channel in green.
 
 **Run Correlation** fits the transform from the pairs and projects the
 point of interest into the FIB image, where it is drawn over the marks.
@@ -157,11 +206,29 @@ points.
 
 ## 6. A workflow with correlation in it
 
-Setup Lamella Position, Spot Burn Fiducial and Acquire Fluorescence Image,
-then the correlation by hand on the Lamella tab for each lamella, then Mill
-Fiducial, Rough Milling and Polishing as on the
+Setup Lamella Position, Spot Burn Fiducial and Mill Fiducial, then the
+fluorescence stack (the Acquire Fluorescence Image task on an Arctis; the
+METEOR's software otherwise), then the correlation by hand on the Lamella
+tab for each lamella, then Rough Milling and Polishing as on the
 [Tasks](/docs/tasks) page. Supervise the burn the first time, to see where
 the points land; the acquisition needs no supervision.
+
+### Correlating more than once
+
+For a target that is hard to see through the material above it, correlate
+in rounds. After the first correlation, a **pre-milling** step clears the
+material around the site at a high current, leaving the target and a
+margin. Acquire another stack, correlate again with the target now closer
+to the surface and clearer, then run the rough milling on the refined point.
+The sequence is: burn and fiducial, stack, correlate, pre-mill, stack,
+correlate, rough mill.
+
+Pre-milling is a **Rough Milling** task with wide, high-current patterns
+placed to leave a generous margin around the point of interest. Use the
+Rough Milling task type for it, not Trench Milling, which is the waffle
+method for high-pressure-frozen samples ([Tasks](/docs/tasks)). A second
+Acquire Fluorescence Image task after it, and the same correlation on the
+Lamella tab, complete the round.
 
 ## Next
 
