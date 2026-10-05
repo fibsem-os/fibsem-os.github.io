@@ -1,6 +1,9 @@
 {
   "grid-workflow": [
+    "calibrate-working-slot.png",
     "protocol-grid-page.png",
+    "protocol-grid-reach.png",
+    "grid-card-actions.png",
     "grids-tab-inventory.png",
     "grids-view.png",
     "run-preflight.png",
@@ -8,7 +11,11 @@
     "run-finished.png",
     "run-summary.png",
     "screen-all-preflight.png",
+    "grid-verdict-menu.png",
+    "grid-note.png",
     "grids-tab-results.png",
-    "overview-dialog.png"
+    "overview-dialog.png",
+    "report-cover.png",
+    "report-grid.png"
   ]
 }

@@ -24,8 +24,7 @@ const meta: MetaRecord = {
   tasks: "Tasks",
   workflows: "Workflows",
   correlation: "Spot burns and correlation",
-  // built and reviewable by URL, hidden until features.grid_workflow is on by default
-  "grid-workflow": { title: "Grid workflow", display: "hidden" },
+  "grid-workflow": "Grid workflow",
   "-- developers": { type: "separator", title: "Developers" },
   // These seven are written from a fibsem-os checkout by
   // scripts/sync-developer-docs.mjs before every build and are gitignored; the
