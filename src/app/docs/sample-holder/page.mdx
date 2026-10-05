@@ -23,7 +23,7 @@ the grids: the holder, its slots, and what is in them.
 
 - **(1)** The holder's facts: how many slots, how many are calibrated, and
   the pre-tilt and reference rotation it was calibrated against. The holder
-  belongs to the instrument, not to a configuration.
+  is saved with the microscope configuration.
 - **(2)** One row per slot: a dot that is green once the slot has a
   calibrated position, the slot's name, and the grid in it.
 - **(3)** Move to this slot. Greyed out until the slot is calibrated.
@@ -44,6 +44,11 @@ grids by it. Clear the name when the grid comes out.
 
 What is in the holder is remembered between sessions, so name grids when
 you load them and the next session starts knowing.
+
+With an experiment open, naming a slot also renames that grid's record on
+the Grids tab. Once a grid has run in the
+[grid workflow](/docs/grid-workflow#naming) its name is fixed, because its
+folder and images carry it, and naming its slot is refused.
 
 ## 3. Calibrate the slots
 
@@ -76,8 +81,8 @@ A slot with no grid in it can be skipped and calibrated later.
 
 ![Step 5: check and save](/doc/img/sample-holder/calibrate-5-review.png)
 
-Save writes the holder file. Both slots now show a green dot, and the facts
-line says so.
+Save writes the holder into the microscope configuration. Both slots now
+show a green dot, and the facts line says so.
 
 ![Both slots calibrated](/doc/img/sample-holder/slots-calibrated.png)
 
@@ -98,30 +103,71 @@ overviews.
 
 ## 5. Where it lives
 
-The holder is saved as `sample-holder.yaml` beside your configuration
-files, and the grid names in `sample-holder-occupancy.yaml` next to it.
-Both are shared by every configuration on that computer, because they
-describe the instrument's holder rather than a way of using it. If a
-different holder is fitted, edit the name and slot count with the pencil and
-calibrate it; the old positions are discarded because they no longer apply.
-A position captured against a different pre-tilt or reference rotation is
-also treated as uncalibrated, which is what the facts line's "pre-tilt" and
-"reference rotation" are telling you.
+The holder, with its slot positions, is saved in the microscope
+configuration that was connected when it was calibrated, under
+`calibration`: every holder the instrument has, and which one is on the
+stage. The grid names are kept in that configuration's session state,
+`config/session/<configuration file>.yaml`. A `sample-holder.yaml` from an
+earlier version, beside the configuration files, is imported when the
+configuration has no holder of its own, and is carried into the
+configuration the next time it is saved.
 
-## 6. The Arctis: holder and loader (experimental)
+If a different holder is fitted, edit the name and slot count with the
+pencil and calibrate it; the old positions are discarded because they no
+longer apply. A position captured against a different pre-tilt or reference
+rotation is also treated as uncalibrated, which is what the facts line's
+"pre-tilt" and "reference rotation" are telling you.
+
+## 6. The Arctis: holder and loader
 
 On an Arctis the Sample tab has two panels. The holder is the compustage's
-one working slot; below it is the **Loader**, the autoloader magazine with
-its twelve slots, which grids are in them, and buttons to scan the magazine
-and to bring a grid into the working slot or send it back.
+one working slot, where the autoloader puts every grid. Below it is the
+**Loader**: the autoloader's magazine, with its twelve slots and the grid in
+each.
 
 ![The Sample tab on an Arctis: the compustage holder and the loader magazine](/doc/img/sample-holder/sample-tab-arctis.png)
 
-Loader support is **experimental**. The exchange itself runs on the
-instrument through AutoScript; on the simulator the magazine is listed but
-nothing moves. Name grids in the magazine as you would in a shuttle slot,
-and use the instrument's own software for anything the panel does not
-offer.
+- **(1)** The holder: the working slot.
+- **(2)** The Loader: one row per magazine slot, with the grid's name and a
+  button that loads the grid into the working slot, or sends the loaded
+  grid back to the magazine. An exchange, unloading one grid and loading
+  the next, takes about 3 minutes.
+- **(3)** Scan the magazine: the autoloader checks every slot for a grid. A
+  scan takes about 10 minutes, with the magazine shut. After the magazine
+  is undocked its slots read as unknown until the next scan.
+- **(4)** The pencil: calibrate the working slot.
+
+Name grids in the magazine's rows as in a shuttle slot. The name is written
+to the autoloader's slot description, so it stays with the slot between
+sessions.
+
+### Calibrate the working slot
+
+Until it is calibrated, the working slot is the stage origin. A grid the
+autoloader loads sits off the origin in x, y and z, by the same amount on
+every load, and out of coincidence. Grid tasks centre their overviews on
+the working slot, so calibrate it once per instrument.
+
+Load a grid, then press the pencil. The calibration is the one in section
+3, for one slot: the holder's name and slot count are fixed.
+
+![Step 1: the compustage holder, with one working slot](/doc/img/sample-holder/calibrate-arctis-1-holder.png)
+
+Move to the SEM orientation as for a shuttle. Then drive the stage until
+the centre of the grid is under the electron beam, with the beams in
+coincidence there, and press **Capture**. The height is captured as well
+as x and y. **Move to slot** drives back to what was captured, to check it.
+
+![The working slot captured](/doc/img/sample-holder/calibrate-arctis-2-slot.png)
+
+Check and save. The working slot's dot turns green, and the calibration is
+kept across connections.
+
+![The working slot calibrated](/doc/img/sample-holder/sample-tab-arctis-calibrated.png)
+
+A calibration captured against a different pre-tilt or reference rotation
+is dropped with a warning when the instrument connects, and the working
+slot is the origin again until it is recalibrated.
 
 ## Next
 
