@@ -1,4 +1,20 @@
 {
+  "sample-holder": [
+    "sample-tab.png",
+    "grids-named.png",
+    "calibrate-1-holder.png",
+    "calibrate-2-orientation.png",
+    "calibrate-3-slot-1.png",
+    "calibrate-4-slot-2.png",
+    "calibrate-5-review.png",
+    "slots-calibrated.png",
+    "at-slot-1.png",
+    "at-slot-2.png",
+    "sample-tab-arctis.png",
+    "calibrate-arctis-1-holder.png",
+    "calibrate-arctis-2-slot.png",
+    "sample-tab-arctis-calibrated.png"
+  ],
   "grid-workflow": [
     "calibrate-working-slot.png",
     "protocol-grid-page.png",
