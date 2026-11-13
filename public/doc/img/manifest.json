@@ -33,5 +33,22 @@
     "overview-dialog.png",
     "report-cover.png",
     "report-grid.png"
+  ],
+  "overview": [
+    "overview-tab.png",
+    "sem-overview.png",
+    "positions-marked.png",
+    "fib-overview-sem-orientation.png",
+    "fib-overview-milling-orientation.png",
+    "view-strip.png",
+    "external-fm-align-panel.png",
+    "external-fm-import-dialog.png",
+    "external-fm-sem-imported.png",
+    "external-fm-sem-fit-dialog.png",
+    "external-fm-sem-fitted.png",
+    "external-fm-fib-imported.png",
+    "external-fm-fib-fit-dialog.png",
+    "external-fm-fib-fitted.png",
+    "fm-overview-tab.png"
   ]
 }
