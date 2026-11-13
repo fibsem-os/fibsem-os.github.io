@@ -106,6 +106,79 @@ on the Arctis only.
   the stage there.
 - **(3)** Acquire, with the channels and z-stack settings on the right.
 
+## 6. Correlating SEM Overview and FM Overview
+
+A fluorescence overview taken with another program, such as the METEOR's,
+can be laid over an SEM overview and lined up by hand. You can then mark
+lamella positions over the fluorescence signal, as in step 3.
+
+Before you start:
+
+- fibsemOS 0.6.0 or newer.
+- The FM overview is saved as an OME-TIFF (`.ome.tiff`), the format the
+  METEOR's software saves.
+- The SEM overview from step 2 is showing, and the grid is loaded on the
+  stage. fibsemOS keeps a copy of the imported image in the grid's folder.
+
+Press **Align** in the canvas toolbar. Under **Image**, press **Load…** and
+pick the file. An image from another program goes through an import
+dialog first:
+
+![The import dialog for an FM overview from another program](/doc/img/overview/external-fm-import-dialog.png)
+
+Check which axis is channels and which is z (**Swap channel and z** if
+they are the wrong way round), the size of a pixel, and each channel's
+name and colour. The pixel size and channel names are read from the file
+when it has them. Press **Import**.
+
+The image is placed at the centre of the view, at the right size, but not
+yet turned or moved to where it was taken:
+
+![The FM overview imported over the SEM overview, before it is lined up](/doc/img/overview/external-fm-sem-imported.png)
+
+Press **Fit from points…**. Click a feature on the overview, then the same
+feature on the FM image. Grid bar corners, holes and broken film work
+well. Make four to six pairs, spread across the image. The RMS at the
+bottom says how well they agree. If it says the points fit much better
+mirrored, cancel, press **Mirror** in the Align panel and fit again; your
+points are kept.
+
+![Fit from points with five matching pairs](/doc/img/overview/external-fm-sem-fit-dialog.png)
+
+Press **Fit and apply**. The image moves, turns and scales onto the
+overview:
+
+![The FM overview lined up on the SEM overview](/doc/img/overview/external-fm-sem-fitted.png)
+
+**Align image** lets you drag it, turn it with the handle and scale it from
+a corner for a final touch; **Reset** puts it back where it was imported.
+The placement is saved with the grid.
+
+## 7. Correlating FIB Overview and FM Overview
+
+The same import works on an ion beam overview, at either orientation. The
+fluorescence microscope looks straight down on the grid while the ion beam
+looks along it, so fibsemOS foreshortens the FM image to match the view
+when it imports it:
+
+![The FM overview imported over the ion beam's overview at the MILLING orientation](/doc/img/overview/external-fm-fib-imported.png)
+
+The points are fitted on the flat sample, not on the screen, so four to
+six pairs are still enough at a grazing angle. Click them as in step 6:
+
+![Fit from points on the ion beam's overview](/doc/img/overview/external-fm-fib-fit-dialog.png)
+
+![The FM overview lined up on the ion beam's overview](/doc/img/overview/external-fm-fib-fitted.png)
+
+A correction made in one view carries to the others: an image lined up on
+the SEM overview is already in place on the ion beam's.
+
+The import assumes the image was taken looking straight down on the grid,
+as the METEOR does. In 0.6.0rc1 that assumption is wrong on a fibsemOS that
+has the METEOR configured, and the imported image comes out stretched; use
+one without it. If the RMS stays high however many points you add, the
+image's shape is wrong, not your points.
+
 ## Next
 
 [Lamella](/docs/lamella): what a marked position becomes, and how to set
